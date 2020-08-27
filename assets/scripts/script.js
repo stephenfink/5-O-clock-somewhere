@@ -1,19 +1,18 @@
 // this is my JS for the sake of getting console log.
-
 var settings = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://the-cocktail-db.p.rapidapi.com/list.php?i=list",
+	"url": "https://the-cocktail-db.p.rapidapi.com/list.php?c=list",
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
 		"x-rapidapi-key": "3ef48bec08msh4ca648e32eb8d00p144008jsnd9c733aaf1ee"
 	}
 }
+
 $.ajax(settings).done(function (response) {
 	console.log(response);
 });
-
 
 //drinks are in array
 
