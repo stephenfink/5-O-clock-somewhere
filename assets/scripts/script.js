@@ -94,22 +94,22 @@ $.ajax({
 
 
 //then example
- var drinkName = strDrinkThumb
-var ingreident1 = strIngredient1
-var ingreident2=  strIngredient2
-var ingreident3 = strIngredient3
-var ingreident4 = strIngredient4
-var ingreident5 = strIngredient5
-var ingreident6 = strIngredient6
-var ingreident7 = strIngredient7
-var ingreident8 = strIngredient8
-var ingreident9 = strIngredient9
-var ingreident10 = strIngredient10
-var ingrident11 = strIngredient11
-var ingrident12 = strIngredient12
-var ingrident13 = strIngredient13
-var ingrident14 = strIngredient14
-var ingrident15 = strIngredient15
+ var drinkName = response.strDrinkThumb
+var ingredient1 = strIngredient1
+var ingredient2=  strIngredient2
+var ingredient3 = strIngredient3
+var ingredient4 = strIngredient4
+var ingredient5 = strIngredient5
+var ingredient6 = strIngredient6
+var ingredient7 = strIngredient7
+var ingredient8 = strIngredient8
+var ingredient9 = strIngredient9
+var ingredient10 = strIngredient10
+var ingredient11 = strIngredient11
+var ingredient12 = strIngredient12
+var ingredient13 = strIngredient13
+var ingredient14 = strIngredient14
+var ingredient15 = strIngredient15
 var measure1 = strMeasure1
 var measure2 = strMeasure2
 var measure3 = strMeasure3
@@ -126,12 +126,9 @@ var measure13 = strMeasure13
 var measure14 = strMeasure14
 var measure15 = strMeasure15
 
-
-
-
 })
 
-
+//we need to make an array for it for a functional call of ingredient[i]for said thing
 
 
 
@@ -144,6 +141,16 @@ var measure15 = strMeasure15
 //this is still in works to add the results page 
 
 	function drinkResults(){
+		
+		//this is use for the image
+		
+		var img = document.createElement("image")
+		img.src = cocktail.drinks[0].strDrinkTumb;
+
+		drinkSection.appendChild(img);
+		
+		//jQuery appending divs but will change later on
+		
 		$("#results").append("
 		<div class='container'><div class='drinkName'>Captain Kidd's Punch</div></div>");
 	}
