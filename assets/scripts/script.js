@@ -8,7 +8,7 @@ url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list"
 //alcoholic filters
 url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list"
 
-//first link not sure if we are going to use
+//this is a test exmaple
 var settings = {
 	"async": true,
 	"crossDomain": true,
@@ -34,12 +34,10 @@ console.log(drinks[3])
 console.log(drinks[4])
 console.log(drinks[5])
 console.log(drinks[6])
-//end of first
+//end of test example
 
-//the button set up
-//each button needs to have set of menu on the ingredients page
-//the random button can be made built in ingredients page 
-
+//the button set up: this should save the data collected by user
+//that data is saved for the Ajax function via local storage
 
 var whiskeyBtn = getelementbyID("#whiskeyButton")
 $(whiskeyBtn).on("click", function(){
@@ -64,12 +62,6 @@ $(lightRumBtn).on("click", function(){
     //random 
 })
 
-var vodkaBtn = getelementbyID("#Vodka")
-$(vodkaBtn).on("click", function(){
-	//vodka drinks
-	//random button
-})
-
 //we need a button to let the script to know the user stop sel drink ingred.s 
 // so it will show what kind of drink it has made, or errors
 
@@ -77,12 +69,14 @@ $(vodkaBtn).on("click", function(){
 //this is from our api code Snippets to set up the api parts of it
 // we need 12 vars and then ajax for 
 
-var alcoholicFilters //this should have a strIngredients of just the alcholic parts
-var ingredients //this should have the strIngredientsIndex in it
-var drinkImage //this should be a = reponse.image something
-var categories //this could be a use for searching of drink
+
+// This should be the ajax function to pull the data from the apis
+var alcoholicFilters
+var ingredients
+var drinkImage
+var categories
 var searchBar = getElementbyID("#searchBarInput") // this equals to a value that the users types in
-var userInput = "" //this should be the var holder for user input
+var userInput = ""
 //api for categories list
 var settings = {
 	"async": true,
@@ -94,17 +88,15 @@ var settings = {
 		"x-rapidapi-key": "93edb3a2f6msh0fbac3bf66ebae6p15bb2djsn6920073de5e9"
 	}
 }
-// first gather user input of data of drinks
-//then use them to search through the response 
+// example of a ajax set up for getting data from api
 $.ajax({
-	url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list",
-	method: "GET"
+	
 }).then(function(response){
 	console.log(response);
 
 
 
-//these should be place holders vars for the array of ingredients to display
+// the .then of collecting and JSON ingredients into a var via object
  var drinkName = response.strDrinkThumb
 var ingredient1 = strIngredient1
 var ingredient2=  strIngredient2
@@ -139,36 +131,20 @@ var measure15 = strMeasure15
 
 })
 
-//we need to make an array for it for a functional call
-// of ingredient[i] as part of the display
+//need to make a possible way of listing ingredients 
+//this list should have selectors or a search bar to give user input
+//
 
 
 
 
-//the random 
-/* function getRandomCocktail(){
-	fetch('https://www.thecocktaildb.com/api/json/v2/9973533/random.php')
-	.then(
-		function(response){
-			if (response.status !== 200){
-				console.log("looks like an error" +response.status);
-				return;
-			}
-			reponse.json().then(function(data){
-				console.log(data);
-				display
-			});
-		}
-	).catch(function(err){
-		console.log("error catch", err);
 
-	});
-}
-getRandomCocktail();
-*/
+
 
 
 //this is still in works to add the results page 
+//this appends the drink and how to make with info is posted
+//this is almost done:
 
 	function drinkResults(){
 		
@@ -178,10 +154,19 @@ getRandomCocktail();
 		img.src = cocktail.drinks[0].strDrinkTumb;
 
 		drinkSection.appendChild(img);
+		/* */ 
+		//jQuery appending divs but will change late on
+		//this is the image prepend
+		$("#finalImage").prepend(img)
+		//this is the ingreidents and how to add them this is an example
+		// loop is needed also
+		("#eachIngreident").append("<ul>" + text strIngredient[i] + "</ul>")
+		//measurements this needs a for each or for loop
+		("#eachIngreidentM").append("<ul>" + measure[i] + "</ul>")
 		
-		//jQuery appending divs but will change later on
-		
-		$("#results").append("")
+		//this is the list of each step, in which needs to be a number list
+		//
+		$("#steps").append("<li>" + + "<li>");
 	}
 
 // the $("#id that carries the div for display").empty(); lets the inter phase clear of any past holdings
@@ -208,8 +193,6 @@ getRandomCocktail();
 
 //the results should show the top three drinks used with most ingred 
 //to least but only up to 5 depending on drink
-
-//random button
 
 
 
