@@ -1,6 +1,4 @@
 // this is my JS for the sake of getting console log.
-<<<<<<< HEAD
-=======
 //catergories list
 url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?c=list" 
 //glasses
@@ -10,22 +8,21 @@ url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list"
 //alcoholic filters
 url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list"
 
-//this is a test exmaple
->>>>>>> master
+//first link not sure if we are going to use
 var settings = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://the-cocktail-db.p.rapidapi.com/list.php?c=list",
+	"url": "https://the-cocktail-db.p.rapidapi.com/list.php?i=list",
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
 		"x-rapidapi-key": "3ef48bec08msh4ca648e32eb8d00p144008jsnd9c733aaf1ee"
 	}
 }
-
 $.ajax(settings).done(function (response) {
 	console.log(response);
 });
+
 
 //drinks are in array
 //this wil need to double check functions on console logs
@@ -37,10 +34,12 @@ console.log(drinks[3])
 console.log(drinks[4])
 console.log(drinks[5])
 console.log(drinks[6])
-//end of test example
+//end of first
 
-//the button set up: this should save the data collected by user
-//that data is saved for the Ajax function via local storage
+//the button set up
+//each button needs to have set of menu on the ingredients page
+//the random button can be made built in ingredients page 
+
 
 var whiskeyBtn = getelementbyID("#whiskeyButton")
 $(whiskeyBtn).on("click", function(){
@@ -65,6 +64,12 @@ $(lightRumBtn).on("click", function(){
     //random 
 })
 
+var vodkaBtn = getelementbyID("#Vodka")
+$(vodkaBtn).on("click", function(){
+	//vodka drinks
+	//random button
+})
+
 //we need a button to let the script to know the user stop sel drink ingred.s 
 // so it will show what kind of drink it has made, or errors
 
@@ -72,14 +77,12 @@ $(lightRumBtn).on("click", function(){
 //this is from our api code Snippets to set up the api parts of it
 // we need 12 vars and then ajax for 
 
-
-// This should be the ajax function to pull the data from the apis
-var alcoholicFilters
-var ingredients
-var drinkImage
-var categories
+var alcoholicFilters //this should have a strIngredients of just the alcholic parts
+var ingredients //this should have the strIngredientsIndex in it
+var drinkImage //this should be a = reponse.image something
+var categories //this could be a use for searching of drink
 var searchBar = getElementbyID("#searchBarInput") // this equals to a value that the users types in
-var userInput = ""
+var userInput = "" //this should be the var holder for user input
 //api for categories list
 var settings = {
 	"async": true,
@@ -91,15 +94,17 @@ var settings = {
 		"x-rapidapi-key": "93edb3a2f6msh0fbac3bf66ebae6p15bb2djsn6920073de5e9"
 	}
 }
-// example of a ajax set up for getting data from api
+// first gather user input of data of drinks
+//then use them to search through the response 
 $.ajax({
-	
+	url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list",
+	method: "GET"
 }).then(function(response){
 	console.log(response);
 
 
 
-// the .then of collecting and JSON ingredients into a var via object
+//these should be place holders vars for the array of ingredients to display
  var drinkName = response.strDrinkThumb
 var ingredient1 = strIngredient1
 var ingredient2=  strIngredient2
@@ -134,20 +139,36 @@ var measure15 = strMeasure15
 
 })
 
-//need to make a possible way of listing ingredients 
-//this list should have selectors or a search bar to give user input
-//
+//we need to make an array for it for a functional call
+// of ingredient[i] as part of the display
 
 
 
 
+//the random 
+/* function getRandomCocktail(){
+	fetch('https://www.thecocktaildb.com/api/json/v2/9973533/random.php')
+	.then(
+		function(response){
+			if (response.status !== 200){
+				console.log("looks like an error" +response.status);
+				return;
+			}
+			reponse.json().then(function(data){
+				console.log(data);
+				display
+			});
+		}
+	).catch(function(err){
+		console.log("error catch", err);
 
-
+	});
+}
+getRandomCocktail();
+*/
 
 
 //this is still in works to add the results page 
-//this appends the drink and how to make with info is posted
-//this is almost done:
 
 	function drinkResults(){
 		
@@ -157,19 +178,10 @@ var measure15 = strMeasure15
 		img.src = cocktail.drinks[0].strDrinkTumb;
 
 		drinkSection.appendChild(img);
-		/* */ 
-		//jQuery appending divs but will change late on
-		//this is the image prepend
-		$("#finalImage").prepend(img)
-		//this is the ingreidents and how to add them this is an example
-		// loop is needed also
-		("#eachIngreident").append("<ul>" + text strIngredient[i] + "</ul>")
-		//measurements this needs a for each or for loop
-		("#eachIngreidentM").append("<ul>" + measure[i] + "</ul>")
 		
-		//this is the list of each step, in which needs to be a number list
-		//
-		$("#steps").append("<li>" + + "<li>");
+		//jQuery appending divs but will change later on
+		
+		$("#results").append("")
 	}
 
 // the $("#id that carries the div for display").empty(); lets the inter phase clear of any past holdings
