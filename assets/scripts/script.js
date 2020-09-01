@@ -7,9 +7,11 @@ url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?g=list"
 url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list"
 //alcoholic filters
 url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list"
+// pop. drink
+url = "https://www.thecocktaildb.com/api/json/v2/9973533/popular.php"
 
 //this is a test exmaple
-var settings = {
+/*var settings = {
 	"async": true,
 	"crossDomain": true,
 	"url": "https://the-cocktail-db.p.rapidapi.com/list.php?i=list",
@@ -21,7 +23,7 @@ var settings = {
 }
 $.ajax(settings).done(function (response) {
 	console.log(response);
-});
+});*/
 
 
 //drinks are in array
@@ -72,32 +74,27 @@ $(lightRumBtn).on("click", function(){
 
 // This should be the ajax function to pull the data from the apis
 var alcoholicFilters
+var glasses = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?g=list"
 var ingredients
 var drinkImage
 var categories
 var searchBar = getElementbyID("#searchBarInput") // this equals to a value that the users types in
 var userInput = ""
 //api for categories list
-var settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://the-cocktail-db.p.rapidapi.com/list.php?c=list",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
-		"x-rapidapi-key": "93edb3a2f6msh0fbac3bf66ebae6p15bb2djsn6920073de5e9"
-	}
-}
-// example of a ajax set up for getting data from api
+function apilog(){
+// example of a ajax set up for getting data from api this is cat. 
 $.ajax({
 	
+	url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?g=list",
+	method = "GET"
 }).then(function(response){
-	console.log(response);
+	console.log("glass" + response);
+});
 
 
 
 // the .then of collecting and JSON ingredients into a var via object
- var drinkName = response.strDrinkThumb
+var drinkName = response.strDrinkThumb
 var ingredient1 = strIngredient1
 var ingredient2=  strIngredient2
 var ingredient3 = strIngredient3
@@ -145,7 +142,7 @@ var measure15 = strMeasure15
 //this is still in works to add the results page 
 //this appends the drink and how to make with info is posted
 //this is almost done:
-
+//
 	function drinkResults(){
 		
 		//this is use for the image
@@ -160,7 +157,7 @@ var measure15 = strMeasure15
 		$("#finalImage").prepend(img)
 		//this is the ingreidents and how to add them this is an example
 		// loop is needed also
-		("#eachIngreident").append("<ul>" + text strIngredient[i] + "</ul>")
+		("#eachIngreident").append("<ul>" + text[i] + "</ul>")
 		//measurements this needs a for each or for loop
 		("#eachIngreidentM").append("<ul>" + measure[i] + "</ul>")
 		
