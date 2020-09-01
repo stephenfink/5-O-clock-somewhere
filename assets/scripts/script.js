@@ -1,6 +1,4 @@
 // this is my JS for the sake of getting console log.
-<<<<<<< HEAD
-=======
 //catergories list
 url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?c=list" 
 //glasses
@@ -11,7 +9,6 @@ url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list"
 url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list"
 
 //this is a test exmaple
->>>>>>> master
 var settings = {
 	"async": true,
 	"crossDomain": true,
