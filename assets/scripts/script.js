@@ -94,9 +94,9 @@ rumBtn.addeventlistener("click",function(){
     //add random rum drink
 })
 
-var lightRumBtn = document.getElementById("#btn3")
-lightRumBtn.addeventlistener("click", function(){
-	console.log(lightRumBtn)
+var tequilaBtn = document.getElementById("#btn3")
+tequilaBtn.addeventlistener("click", function(){
+	console.log(tequilaBtn)
     //this will give light rum drinks
     //random 
 })
@@ -104,6 +104,13 @@ var vodkaBtn = document.getElementById("btn4")
 vodkaBtn.addEventListener("click", function(event){
     console.log(event)
     //this will give vodka drinks
+    //random 
+})
+
+var ginBtn = document.getElementById("btn4")
+ginBtn.addEventListener("click", function(event){
+    console.log(ginBtn)
+    //this will give gin drinks
     //random 
 })
 
