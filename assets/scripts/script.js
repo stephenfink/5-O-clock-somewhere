@@ -68,8 +68,8 @@ $.ajax({
 
 var  randomCocktail = "https://www.thecocktaildb.com/api/json/v2/9973533/random.php"
 	//-----Random Cocktail------
-var randomBtn = document.getElementById("btn5");
-var whiskeyBtn = document.getElementbyID("#btn1");
+var randomBtn = document.getElementById("btn6");
+var whiskeyBtn = document.getElementbyID("btn1");
 $.ajax({
     url: randomCocktail,
     method: "GET"
@@ -87,18 +87,36 @@ $.ajax({
 })
 
 
-var rumBtn = document.getElementbyID("#btn2")
+
+var rumBtn = document.getElementbyID("btn2")
 rumBtn.addeventlistener("click",function(){
 	console.log(rumBtn)
     //when i click this it gives me the rum options
     //add random rum drink
 })
 
-var tequilaBtn = document.getElementById("#btn3")
+var tequilaBtn = document.getElementById("btn3")
 tequilaBtn.addeventlistener("click", function(){
 	console.log(tequilaBtn)
-    //this will give light rum drinks
-    //random 
+    //this will give tequila drinks
+    //tequila button
+    $.ajax({
+        url: randomCocktail,
+        method: "GET"
+    })
+    .then(function (tequila) {
+        console.log(tequila.drinks[0]);
+        let randomSection = document.getElementById("drinkSection")
+        let drinkName = document.createElement('h2');
+        drinkName.innerHTML = random.drinks[0].strDrink;
+        randomSection.appendChild(drinkName);
+        let img = document.createElement('img');
+        img.src = random.drinks[0].strDrinkThumb;
+        randomSection.appendChild(img);
+        })
+    })
+
+
 })
 var vodkaBtn = document.getElementById("btn4")
 vodkaBtn.addEventListener("click", function(event){
@@ -107,12 +125,15 @@ vodkaBtn.addEventListener("click", function(event){
     //random 
 })
 
-var ginBtn = document.getElementById("btn4")
+var ginBtn = document.getElementById("btn5")
 ginBtn.addEventListener("click", function(event){
     console.log(ginBtn)
     //this will give gin drinks
     //random 
 })
+
+//this is where random buttong goes
+
 
 //we need a button to let the script to know the user stop sel drink ingred.s 
 // so it will show what kind of drink it has made, or errors
