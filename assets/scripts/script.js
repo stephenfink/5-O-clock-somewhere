@@ -16,45 +16,14 @@ $.ajax(settings).done(function (response) {
 	console.log(response);
 });*/
 
+var alcoholicFiltersURL = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list"
+var popularCocktailsUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/popular.php"
+var cocktailListURL = "https://www.thecocktaildb.com/api/json/v2/9973533/latest.php"
+
 //glasses
 var glassesURL = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?g=list"
 //ingredients
  var ingredientsURL = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list"
-//alcoholic filters
-//url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list"
-var popularCocktailsUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/popular.php"
-var cocktailListURL = "https://www.thecocktaildb.com/api/json/v2/9973533/latest.php"
-
-$.ajax({
-    url: glassesURL,
-    method: "GET"
-})
-.then(function (response) {
-    console.log(response);
-})
-$.ajax({
-    url: ingredientsURL,
-    method: "GET"
-})
-.then(function (response) {
-    console.log(response);
-})
-$.ajax({
-    url: popularCocktailsUrl,
-    method: "GET"
-})
-.then(function (response) {
-    console.log(response);
-})
-$.ajax({
-    url: cocktailListURL,
-    method: "GET"
-})
-.then(function (response) {
-    console.log(response);
-})
-
-
 
 //drinks are in array
 //this wil need to double check functions on console logs
@@ -66,19 +35,24 @@ $.ajax({
 //that data is saved for the Ajax function via local storage
 
 
-var  randomCocktail = "https://www.thecocktaildb.com/api/json/v2/9973533/random.php"
+
 	//-----Random Cocktail------
-var randomBtn = document.getElementById("btn6");
-var whiskeyBtn = document.getElementbyID("btn1");
+
+
+var whiskeyBtn = document.getElementbyId("btn1");
+whiskeyBtn.addEventListener("click", function() {
+    console.log(whiskeyBtn)
 $.ajax({
-    url: randomCocktail,
+    url: ingredientsURL,
     method: "GET"
 })
-.then(function (whis) {
-    console.log(random.drinks[0]);
+//474 is whiskey ingredient number
+.then(function (whiskey) {
+    var whiskey = drink[474]
+    console.log(whiskey);
     let randomSection = document.getElementById("drinkSection")
     let drinkName = document.createElement('h2');
-    drinkName.innerHTML = random.drinks[0].strDrink;
+    drinkName.innerHTML = whiskey.drinks[0].strDrink;
     randomSection.appendChild(drinkName);
     let img = document.createElement('img');
     img.src = random.drinks[0].strDrinkThumb;
@@ -88,7 +62,7 @@ $.ajax({
 
 
 
-var rumBtn = document.getElementbyID("btn2")
+var rumBtn = document.getElementbyId("btn2")
 rumBtn.addeventlistener("click",function(){
 	console.log(rumBtn)
     //when i click this it gives me the rum options
@@ -117,7 +91,7 @@ tequilaBtn.addeventlistener("click", function(){
     })
 
 
-})
+
 var vodkaBtn = document.getElementById("btn4")
 vodkaBtn.addEventListener("click", function(event){
     console.log(event)
@@ -132,8 +106,25 @@ ginBtn.addEventListener("click", function(event){
     //random 
 })
 
-//this is where random buttong goes
-
+var  randomCocktail = "https://www.thecocktaildb.com/api/json/v2/9973533/random.php"
+	//-----Random Cocktail------
+var randomBtn = document.getElementById("btn6");
+randomBtn.addEventListener("click", function() {
+$.ajax({
+    url: randomCocktail,
+    method: "GET"
+})
+.then(function (random) {
+    console.log(random.drinks[0]);
+    let randomSection = document.getElementById("drinkSection")
+    let drinkName = document.createElement('h2');
+    drinkName.innerHTML = random.drinks[0].strDrink;
+    randomSection.appendChild(drinkName);
+    let img = document.createElement('img');
+    img.src = random.drinks[0].strDrinkThumb;
+    randomSection.appendChild(img);
+    })
+})
 
 //we need a button to let the script to know the user stop sel drink ingred.s 
 // so it will show what kind of drink it has made, or errors
@@ -156,42 +147,7 @@ var userInput = ""
 // example of a ajax set up for getting data from api this is cat. 
 
 //glasses
-var glassesURL = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?g=list"
-//ingredients
- var ingredientsURL = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list"
-//alcoholic filters
-//url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list"
-var popularCocktailsUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/popular.php"
-var cocktailListURL = "https://www.thecocktaildb.com/api/json/v2/9973533/latest.php"
 
-$.ajax({
-    url: glassesURL,
-    method: "GET"
-})
-.then(function (response) {
-    console.log(response);
-})
-$.ajax({
-    url: ingredientsURL,
-    method: "GET"
-})
-.then(function (response) {
-    console.log(response);
-})
-$.ajax({
-    url: popularCocktailsUrl,
-    method: "GET"
-})
-.then(function (response) {
-    console.log(response);
-})
-$.ajax({
-    url: cocktailListURL,
-    method: "GET"
-})
-.then(function (response) {
-    console.log(response);
-})
 // the .then of collecting and JSON ingredients into a var via object
 
 var ingredient1 = strIngredient1
@@ -242,25 +198,7 @@ var measure15 = strMeasure15
 //this appends the drink and how to make with info is posted
 //this is almost done:
 //
-var  randomCocktail = "https://www.thecocktaildb.com/api/json/v2/9973533/random.php"
-	//-----Random Cocktail------
-var randomBtn = document.getElementById("btn5");
-randomBtn.addEventListener("click", function() {
-$.ajax({
-    url: randomCocktail,
-    method: "GET"
-})
-.then(function (random) {
-    console.log(random.drinks[0]);
-    let randomSection = document.getElementById("drinkSection")
-    let drinkName = document.createElement('h2');
-    drinkName.innerHTML = random.drinks[0].strDrink;
-    randomSection.appendChild(drinkName);
-    let img = document.createElement('img');
-    img.src = random.drinks[0].strDrinkThumb;
-    randomSection.appendChild(img);
-    })
-})
+
 // the $("#id that carries the div for display").empty(); lets the inter phase clear of any past holdings
 
 //will need $("#sameid").append()("<div class=something like container> then fill it with divs
