@@ -8,7 +8,7 @@ url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list"
 //alcoholic filters
 url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list"
 
-//first link not sure if we are going to use
+
 var settings = {
 	"async": true,
 	"crossDomain": true,
@@ -34,12 +34,9 @@ console.log(drinks[3])
 console.log(drinks[4])
 console.log(drinks[5])
 console.log(drinks[6])
-//end of first
+
 
 //the button set up
-//each button needs to have set of menu on the ingredients page
-//the random button can be made built in ingredients page 
-
 
 var whiskeyBtn = getelementbyID("#whiskeyButton")
 $(whiskeyBtn).on("click", function(){
@@ -64,12 +61,6 @@ $(lightRumBtn).on("click", function(){
     //random 
 })
 
-var vodkaBtn = getelementbyID("#Vodka")
-$(vodkaBtn).on("click", function(){
-	//vodka drinks
-	//random button
-})
-
 //we need a button to let the script to know the user stop sel drink ingred.s 
 // so it will show what kind of drink it has made, or errors
 
@@ -77,12 +68,12 @@ $(vodkaBtn).on("click", function(){
 //this is from our api code Snippets to set up the api parts of it
 // we need 12 vars and then ajax for 
 
-var alcoholicFilters //this should have a strIngredients of just the alcholic parts
-var ingredients //this should have the strIngredientsIndex in it
-var drinkImage //this should be a = reponse.image something
-var categories //this could be a use for searching of drink
+var alcoholicFilters
+var ingredients
+var drinkImage
+var categories
 var searchBar = getElementbyID("#searchBarInput") // this equals to a value that the users types in
-var userInput = "" //this should be the var holder for user input
+var userInput = ""
 //api for categories list
 var settings = {
 	"async": true,
@@ -94,17 +85,15 @@ var settings = {
 		"x-rapidapi-key": "93edb3a2f6msh0fbac3bf66ebae6p15bb2djsn6920073de5e9"
 	}
 }
-// first gather user input of data of drinks
-//then use them to search through the response 
+
 $.ajax({
-	url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list",
-	method: "GET"
+	
 }).then(function(response){
 	console.log(response);
 
 
 
-//these should be place holders vars for the array of ingredients to display
+//then example
  var drinkName = response.strDrinkThumb
 var ingredient1 = strIngredient1
 var ingredient2=  strIngredient2
@@ -139,33 +128,14 @@ var measure15 = strMeasure15
 
 })
 
-//we need to make an array for it for a functional call
-// of ingredient[i] as part of the display
+//we need to make an array for it for a functional call of ingredient[i]for said thing
 
 
 
 
-//the random 
-/* function getRandomCocktail(){
-	fetch('https://www.thecocktaildb.com/api/json/v2/9973533/random.php')
-	.then(
-		function(response){
-			if (response.status !== 200){
-				console.log("looks like an error" +response.status);
-				return;
-			}
-			reponse.json().then(function(data){
-				console.log(data);
-				display
-			});
-		}
-	).catch(function(err){
-		console.log("error catch", err);
 
-	});
-}
-getRandomCocktail();
-*/
+
+
 
 
 //this is still in works to add the results page 
@@ -181,7 +151,8 @@ getRandomCocktail();
 		
 		//jQuery appending divs but will change later on
 		
-		$("#results").append("")
+		$("#results").append("
+		<div class='container'><div class='drinkName'>Captain Kidd's Punch</div></div>");
 	}
 
 // the $("#id that carries the div for display").empty(); lets the inter phase clear of any past holdings
@@ -209,7 +180,15 @@ getRandomCocktail();
 //the results should show the top three drinks used with most ingred 
 //to least but only up to 5 depending on drink
 
-//random button
+
+
+
+
+	 
+
+	
+		
+	
 
 
 
