@@ -1,15 +1,8 @@
 // this is my JS for the sake of getting console log.
 //catergories list
-url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?c=list" 
-//glasses
-url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?g=list"
-//ingredients
-url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list"
-//alcoholic filters
-url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list"
 
 //this is a test exmaple
-var settings = {
+/*var settings = {
 	"async": true,
 	"crossDomain": true,
 	"url": "https://the-cocktail-db.p.rapidapi.com/list.php?i=list",
@@ -21,44 +14,103 @@ var settings = {
 }
 $.ajax(settings).done(function (response) {
 	console.log(response);
-});
+});*/
+
+//glasses
+var glassesURL = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?g=list"
+//ingredients
+ var ingredientsURL = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list"
+//alcoholic filters
+//url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list"
+var popularCocktailsUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/popular.php"
+var cocktailListURL = "https://www.thecocktaildb.com/api/json/v2/9973533/latest.php"
+
+$.ajax({
+    url: glassesURL,
+    method: "GET"
+})
+.then(function (response) {
+    console.log(response);
+})
+$.ajax({
+    url: ingredientsURL,
+    method: "GET"
+})
+.then(function (response) {
+    console.log(response);
+})
+$.ajax({
+    url: popularCocktailsUrl,
+    method: "GET"
+})
+.then(function (response) {
+    console.log(response);
+})
+$.ajax({
+    url: cocktailListURL,
+    method: "GET"
+})
+.then(function (response) {
+    console.log(response);
+})
+
 
 
 //drinks are in array
 //this wil need to double check functions on console logs
 
-console.log(object.drinks[0])
-console.log(drinks[1])
-console.log(drinks[2])
-console.log(drinks[3])
-console.log(drinks[4])
-console.log(drinks[5])
-console.log(drinks[6])
+
 //end of test example
 
 //the button set up: this should save the data collected by user
 //that data is saved for the Ajax function via local storage
 
-var whiskeyBtn = getelementbyID("#whiskeyButton")
-$(whiskeyBtn).on("click", function(){
-	console.log(whiskeyBtn)
-    //when i click this button it will show whiskey
-    //from most used there old fashion, 
-    //wiskey sour, wiskey coke, random
-    //add a random whiskey drink
+
+var  randomCocktail = "https://www.thecocktaildb.com/api/json/v2/9973533/random.php"
+	//-----Random Cocktail------
+var randomBtn = document.getElementById("btn5");
+var whiskeyBtn = document.getElementbyID("#btn1");
+$.ajax({
+    url: randomCocktail,
+    method: "GET"
+})
+.then(function (whis) {
+    console.log(random.drinks[0]);
+    let randomSection = document.getElementById("drinkSection")
+    let drinkName = document.createElement('h2');
+    drinkName.innerHTML = random.drinks[0].strDrink;
+    randomSection.appendChild(drinkName);
+    let img = document.createElement('img');
+    img.src = random.drinks[0].strDrinkThumb;
+    randomSection.appendChild(img);
+    })
 })
 
 
-var rumBtn = getelementbyID("#rumButton")
-$(rumBtn).on("click", function(){
+var rumBtn = document.getElementbyID("#btn2")
+rumBtn.addeventlistener("click",function(){
 	console.log(rumBtn)
     //when i click this it gives me the rum options
     //add random rum drink
 })
 
-var lightRumBtn = getelementbyID("#lightRumButton")
-$(lightRumBtn).on("click", function(){
+var tequilaBtn = document.getElementById("#btn3")
+tequilaBtn.addeventlistener("click", function(){
+	console.log(tequilaBtn)
     //this will give light rum drinks
+    //random 
+})
+var vodkaBtn = document.getElementById("btn4")
+vodkaBtn.addEventListener("click", function(event){
+    console.log(event)
+    //this will give vodka drinks
+    //random 
+})
+
+var ginBtn = document.getElementById("btn4")
+ginBtn.addEventListener("click", function(event){
+    console.log(ginBtn)
+    //this will give gin drinks
     //random 
 })
 
@@ -69,35 +121,58 @@ $(lightRumBtn).on("click", function(){
 //this is from our api code Snippets to set up the api parts of it
 // we need 12 vars and then ajax for 
 
-
+var drinkarray = []
 // This should be the ajax function to pull the data from the apis
 var alcoholicFilters
+
 var ingredients
 var drinkImage
 var categories
 var searchBar = getElementbyID("#searchBarInput") // this equals to a value that the users types in
 var userInput = ""
 //api for categories list
-var settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://the-cocktail-db.p.rapidapi.com/list.php?c=list",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
-		"x-rapidapi-key": "93edb3a2f6msh0fbac3bf66ebae6p15bb2djsn6920073de5e9"
-	}
-}
-// example of a ajax set up for getting data from api
+
+// example of a ajax set up for getting data from api this is cat. 
+
+//glasses
+var glassesURL = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?g=list"
+//ingredients
+ var ingredientsURL = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list"
+//alcoholic filters
+//url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list"
+var popularCocktailsUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/popular.php"
+var cocktailListURL = "https://www.thecocktaildb.com/api/json/v2/9973533/latest.php"
+
 $.ajax({
-	
-}).then(function(response){
-	console.log(response);
-
-
-
+    url: glassesURL,
+    method: "GET"
+})
+.then(function (response) {
+    console.log(response);
+})
+$.ajax({
+    url: ingredientsURL,
+    method: "GET"
+})
+.then(function (response) {
+    console.log(response);
+})
+$.ajax({
+    url: popularCocktailsUrl,
+    method: "GET"
+})
+.then(function (response) {
+    console.log(response);
+})
+$.ajax({
+    url: cocktailListURL,
+    method: "GET"
+})
+.then(function (response) {
+    console.log(response);
+})
 // the .then of collecting and JSON ingredients into a var via object
- var drinkName = response.strDrinkThumb
+
 var ingredient1 = strIngredient1
 var ingredient2=  strIngredient2
 var ingredient3 = strIngredient3
@@ -129,7 +204,7 @@ var measure13 = strMeasure13
 var measure14 = strMeasure14
 var measure15 = strMeasure15
 
-})
+
 
 //need to make a possible way of listing ingredients 
 //this list should have selectors or a search bar to give user input
@@ -145,30 +220,26 @@ var measure15 = strMeasure15
 //this is still in works to add the results page 
 //this appends the drink and how to make with info is posted
 //this is almost done:
-
-	function drinkResults(){
-		
-		//this is use for the image
-		
-		var img = document.createElement("image")
-		img.src = cocktail.drinks[0].strDrinkTumb;
-
-		drinkSection.appendChild(img);
-		/* */ 
-		//jQuery appending divs but will change late on
-		//this is the image prepend
-		$("#finalImage").prepend(img)
-		//this is the ingreidents and how to add them this is an example
-		// loop is needed also
-		("#eachIngreident").append("<ul>" + text strIngredient[i] + "</ul>")
-		//measurements this needs a for each or for loop
-		("#eachIngreidentM").append("<ul>" + measure[i] + "</ul>")
-		
-		//this is the list of each step, in which needs to be a number list
-		//
-		$("#steps").append("<li>" + + "<li>");
-	}
-
+//
+var  randomCocktail = "https://www.thecocktaildb.com/api/json/v2/9973533/random.php"
+	//-----Random Cocktail------
+var randomBtn = document.getElementById("btn5");
+randomBtn.addEventListener("click", function() {
+$.ajax({
+    url: randomCocktail,
+    method: "GET"
+})
+.then(function (random) {
+    console.log(random.drinks[0]);
+    let randomSection = document.getElementById("drinkSection")
+    let drinkName = document.createElement('h2');
+    drinkName.innerHTML = random.drinks[0].strDrink;
+    randomSection.appendChild(drinkName);
+    let img = document.createElement('img');
+    img.src = random.drinks[0].strDrinkThumb;
+    randomSection.appendChild(img);
+    })
+})
 // the $("#id that carries the div for display").empty(); lets the inter phase clear of any past holdings
 
 //will need $("#sameid").append()("<div class=something like container> then fill it with divs
