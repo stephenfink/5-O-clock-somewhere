@@ -26,10 +26,18 @@ var glassesURL = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?g=l
  var ingredientsURL = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list"
 
 //drinks are in array
-//this wil need to double check functions on console logs
-
-
-//end of test example
+var popularCocktailsUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/popular.php"
+var cocktailListURL = "https://www.thecocktaildb.com/api/json/v2/9973533/latest.php"
+var  randomCocktail = "https://www.thecocktaildb.com/api/json/v2/9973533/random.php"
+var filterAlcoholic = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=Alcoholic"
+var vodkaSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=Vodka"
+var bourbonSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=bourbon"
+var rumSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=rum"
+var tequilaSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=tequila"
+var ginSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=gin"
+let drinkID = "11145";
+var drinkIdSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=11009" ;
+var vodkaDrinkID = ["17212", "12528", "12754", "11009"];
 
 //the button set up: this should save the data collected by user
 //that data is saved for the Ajax function via local storage
@@ -37,31 +45,28 @@ var glassesURL = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?g=l
 
 
 	//-----Random Cocktail------
+var  randomCocktail = "https://www.thecocktaildb.com/api/json/v2/9973533/random.php"
 
-
-var whiskeyBtn = document.getElementbyID("btn1");
-whiskeyBtn.addEventListener("click", function() {
+    var whiskeyBtn = document.getElementById("btn1");
+    whiskeyBtn.addEventListener("click", function() {
     console.log(whiskeyBtn)
-$.ajax({
-    url: ingredientsURL,
-    method: "GET"
-})
-//474 is whiskey ingredient number
-.then(function (whiskey) {
-    var whiskey = drink[474]
-    console.log(whiskey);
-    let randomSection = document.getElementById("drinkSection")
-    let drinkName = document.createElement('h2');
-    drinkName.innerHTML = whiskey.drinks[0].strDrink;
-    randomSection.appendChild(drinkName);
-    let img = document.createElement('img');
-    img.src = random.drinks[0].strDrinkThumb;
-    randomSection.appendChild(img);
+    $.ajax({
+        url: randomCocktail,
+        method: "GET"
     })
-})
+    .then(function (random) {
+        console.log(drinks[0]);
+        let randomSection = document.getElementById("drinkSection")
+        let drinkName = document.createElement('h2');
+        drinkName.innerHTML = random.drinks[0].strDrink;
+        randomSection.appendChild(drinkName);
+        let img = document.createElement('img');
+        img.src = random.drinks[0].strDrinkThumb;
+        randomSection.appendChild(img);
+        })
+    })
 
-
-var rumBtn = document.getElementbyID("#btn2")
+var rumBtn = document.getElementbyId("#btn2")
 rumBtn.addeventlistener("click",function(){
 	console.log(rumBtn)
     //when i click this it gives me the rum options
@@ -74,12 +79,44 @@ tequilaBtn.addeventlistener("click", function(){
     //this will give light rum drinks
     //random 
 })
+//---Vodka Drinks
 var vodkaBtn = document.getElementById("btn4")
-vodkaBtn.addEventListener("click", function(event){
-    console.log(event)
-    //this will give vodka drinks
-    //random 
-})
+vodkaBtn.addEventListener("click", function() {
+	$.ajax({
+		url: drinkIdSearch,
+		method: "GET"
+	})
+	.then(function (vodka) {
+		console.log(vodka);
+		let vodkaDiv = document.getElementById("drinkDiv")
+	let drinkName = document.createElement('h2');
+	drinkName.innerHTML = vodka.drinks[0].strDrink;
+	vodkaDiv.appendChild(drinkName);
+	let img = document.createElement('img');
+	img.src = vodka.drinks[0].strDrinkThumb;
+	vodkaDiv.appendChild(img);
+
+	for(let i=1; i<16; i++) {
+		console.log();
+		if(vodka.drinks[0][`strIngredient${i}`] == null || vodka.drinks[0][`strIngredient${i}`] == '' ) {
+			break;
+		}
+		let ingredient = document.createElement('li');
+		ingredient.innerHTML = vodka.drinks[0][`strMeasure${i}`] + ': ' + vodka.drinks[0][`strIngredient${i}`];
+		vodkaDiv.appendChild(ingredient);
+		}
+		let instructionPara = document.createElement("p");
+		instructionPara.innerHTML = vodka.drinks[0].strInstructions;
+		vodkaDiv.appendChild(instructionPara);
+		let glassType = document.createElement("p");
+		glassType.innerHTML = "Serve drink in a " + vodka.drinks[0].strGlass;
+		vodkaDiv.appendChild(glassType);
+		
+		})
+		
+	})
+	
+
 
 var ginBtn = document.getElementById("btn5")
 ginBtn.addEventListener("click", function(event){
@@ -90,6 +127,7 @@ ginBtn.addEventListener("click", function(event){
 
 var  randomCocktail = "https://www.thecocktaildb.com/api/json/v2/9973533/random.php"
 	//-----Random Cocktail------
+//-----Random Cocktail------
 var randomBtn = document.getElementById("btn6");
 randomBtn.addEventListener("click", function() {
 $.ajax({
@@ -98,16 +136,30 @@ $.ajax({
 })
 .then(function (random) {
     console.log(random.drinks[0]);
-    let randomSection = document.getElementById("drinkSection")
+    let randomDiv = document.getElementById("drinkDiv")
     let drinkName = document.createElement('h2');
     drinkName.innerHTML = random.drinks[0].strDrink;
-    randomSection.appendChild(drinkName);
+    randomDiv.appendChild(drinkName);
     let img = document.createElement('img');
     img.src = random.drinks[0].strDrinkThumb;
-    randomSection.appendChild(img);
+    randomDiv.appendChild(img);
+    for(let i=1; i<16; i++) {
+        console.log();
+        if(random.drinks[0][`strIngredient${i}`] == null || random.drinks[0][`strIngredient${i}`] == '' ) {
+            break;
+        }
+        let ingredient = document.createElement('li');
+        ingredient.innerHTML = random.drinks[0][`strMeasure${i}`] + ': ' + random.drinks[0][`strIngredient${i}`];
+        randomDiv.appendChild(ingredient);
+        }
+        let instructionPara = document.createElement("p");
+        instructionPara.innerHTML = random.drinks[0].strInstructions;
+        randomDiv.appendChild(instructionPara);
+        let glassType = document.createElement("p");
+        glassType.innerHTML = "Serve drink in a " + random.drinks[0].strGlass;
+        randomDiv.appendChild(glassType);
     })
 })
-
 //we need a button to let the script to know the user stop sel drink ingred.s 
 // so it will show what kind of drink it has made, or errors
 
