@@ -257,3 +257,53 @@ idDrink": "178329",
 */
 //all things needed are we what plan to pull for our display and how we make it on screen
 
+
+var popularCocktailsUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/popular.php"
+var cocktailListURL = "https://www.thecocktaildb.com/api/json/v2/9973533/latest.php"
+var  randomCocktail = "https://www.thecocktaildb.com/api/json/v2/9973533/random.php"
+var filterAlcoholic = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=Alcoholic"
+var vodkaSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=Vodka"
+var bourbonSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=bourbon"
+var rumSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=rum"
+var tequilaSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=tequila"
+var ginSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=gin"
+let drinkID = "11145";
+var drinkIdSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=11009" ;
+var vodkaDrinkID = ["17212", "12528", "12754", "11009"];
+
+
+//---Vodka Drinks
+var vodkaBtn = document.getElementById("btn4")
+vodkaBtn.addEventListener("click", function() {
+	$.ajax({
+		url: drinkIdSearch,
+		method: "GET"
+	})
+	.then(function (vodka) {
+		console.log(vodka);
+		let vodkaDiv = document.getElementById("drinkDiv")
+	let drinkName = document.createElement('h2');
+	drinkName.innerHTML = vodka.drinks[0].strDrink;
+	vodkaDiv.appendChild(drinkName);
+	let img = document.createElement('img');
+	img.src = vodka.drinks[0].strDrinkThumb;
+	vodkaDiv.appendChild(img);
+	for(let i=1; i<16; i++) {
+		console.log();
+		if(vodka.drinks[0][`strIngredient${i}`] == null || vodka.drinks[0][`strIngredient${i}`] == '' ) {
+			break;
+		}
+		let ingredient = document.createElement('li');
+		ingredient.innerHTML = vodka.drinks[0][`strMeasure${i}`] + ': ' + vodka.drinks[0][`strIngredient${i}`];
+		vodkaDiv.appendChild(ingredient);
+		}
+		let instructionPara = document.createElement("p");
+		instructionPara.innerHTML = vodka.drinks[0].strInstructions;
+		vodkaDiv.appendChild(instructionPara);
+		let glassType = document.createElement("p");
+		glassType.innerHTML = "Serve drink in a " + vodka.drinks[0].strGlass;
+		vodkaDiv.appendChild(glassType);
+		
+		})
+		
+	})

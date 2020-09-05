@@ -30,7 +30,7 @@
      
 }
 .button {
-    margin:5px;
+    margin:2px;
     align-self: center;
     background-color: turquoise;
     color: whitesmoke;
@@ -44,8 +44,8 @@
     color: whitesmoke;
 }
 .topsearchbar{
-    padding: 20px;
-    text-size-adjust: large;
+    padding: 10px;
+   
 }
 .container{
     display: flex;
@@ -58,6 +58,14 @@
 
 }
 
-.input{
-    background: rgba(0, 0, 0, .1);
+.inputValue{
+    background: rgba(240, 221, 221, 0.5);
+    color: whitesmoke;
+    height: 40px;
+    border-radius: 5px;
+    
+
+}
+#whiskeyDiv{
+    font-size: xx-large;
 }
