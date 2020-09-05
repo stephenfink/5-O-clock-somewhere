@@ -29,6 +29,7 @@
     
      
 }
+ Ben
 .button {
     margin:5px;
     align-self: center;
@@ -61,3 +62,8 @@
 .input{
     background: rgba(0, 0, 0, .1);
 }
+
+body {
+    background-color: lightsalmon;
+}
+
