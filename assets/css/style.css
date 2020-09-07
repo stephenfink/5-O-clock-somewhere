@@ -1,5 +1,5 @@
  body{
-    background-color: ;
+    
     font-family: Arial, Helvetica, sans-serif;
     font-weight:bold;
     background: linear-gradient(to bottom, #33ccff 0%, #ff9966 100%);
@@ -29,7 +29,7 @@
     
      
 }
- Ben
+
 .button {
     margin:2px;
     align-self: center;
@@ -59,25 +59,33 @@
 
 }
 
-<<<<<<< HEAD
+
 .inputValue{
     background: rgba(240, 221, 221, 0.5);
-    color: whitesmoke;
+    color: black;
     height: 40px;
     border-radius: 5px;
     
 
 }
 #whiskeyDiv{
-    font-size: xx-large;
+    font-size: x-large;
+    text-align: center;
 }
-=======
-.input{
-    background: rgba(0, 0, 0, .1);
+#tequilaDiv {
+    font-size: x-large;
+    text-align: center;
 }
 
-body {
-    background-color: lightsalmon;
-
+#vodkaDiv {
+    font-size: x-large;
+    text-align: center;
 }
->>>>>>> master
+#ginDiv {
+    font-size: x-large;
+    text-align: center;
+}
+#rumDiv {
+    font-size: x-large;
+    text-align: center;
+}
