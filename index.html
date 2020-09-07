@@ -50,16 +50,15 @@
 
 <!-- Ben-->
        <div id="frontSideBar" >
-            <div class="topsearchbar">
-                <input type="text" class="inputValue" placeholder="Enter Drink ">
-                <input class="button" type="submit" value="Search">
-            </div>   </br>
-
-              <div class="topsearchbar">  
-                <input type="text" class="inputValue" placeholder="Enter an ingredient! ">
-                <input class="button" type="submit" value="Search">        
-              </div>         
-              <div class="button is-primary">Random Drink!</div>
+         <h3>Search for drink by ingredient!</h3>
+              <div class="topsearchbar"> 
+                <form class = "ingredientSearch">
+                  <input type="text" class="inputValue" id = ingredientInput placeholder="Enter an ingredient! ">
+                  <input class="button" id = ingredientBtn type="submit" value="Search">   
+                </form>      
+              </div>  
+              <br>       
+              <button class="button is-primary " id="btn6">Random Drink!</button>
 
         </div>
             <!--ADD CONTAINER > BUTTON / SO THAT IMAGE OF BOTTLE WILL BE PRESENT BEHIND BUTTON
@@ -80,7 +79,6 @@
                   <button class="button is-primary " id="btn3">Light Rum</button>
                   <button class="button is-primary " id="btn4">Vodka</button>
                   <button class="button is-primary " id="btn5">Gin</button>
-                   <button class="button is-primary " id="btn6">Random</button>
               </div>
             <div id="drinkDiv"></div>  
    </section>            
