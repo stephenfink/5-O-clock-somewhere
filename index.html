@@ -20,6 +20,27 @@
 
      </section>
     </div>
+
+    <!-- Create Navbar to link pages together.-->
+    <div class="navbar-item has-dropdown is-hoverable">
+      <a class="navbar-link is-arrowless">
+        Check out our other options!
+      </a>
+      <div class="navbar-dropdown">
+        <a class="navbar-item" href="index.html">
+          Home
+        </a>
+        <a class="navbar-item" href="ingredients.html">
+          Top 5
+        </a>
+        <a class="navbar-item" href="#">
+          Wine?
+        </a>
+        <hr class="navbar-divider" href="#">
+    
+        </div>
+      </div>
+    </div>
        
         <!--Light Mode - Dark Mode Toggle Switch
             
@@ -39,7 +60,7 @@
 
 
           <!--This is the layout of something to show on screen when open-->
-        <h2>This is a test of pull and git set up</h2>
+        <!--<h2></h2> -->
         <!--These are the buttons will go 
         This will need images need to go as the on click function
         The random button should have a ? image and the name random in it-->
@@ -51,15 +72,24 @@
 <!-- Ben-->
        <div id="frontSideBar" >
             <div class="topsearchbar">
+              <div>
+                <img class="imgA" src="https://static.bartenderspiritsawards.com/cont/news/imagePot/BartenderSpiritsAwardsUS-01022019134400000000-5c2cc0205b957.jpg">
+            </div>
                 <input type="text" class="inputValue" placeholder="Enter Drink ">
-                <input class="button" type="submit" value="Search">
+                <input class="button is-primary" type="submit" value="Search">
             </div>   </br>
 
               <div class="topsearchbar">  
+                <div>
+                  <img class="imgB" src="https://images-na.ssl-images-amazon.com/images/I/81eQKIE2KsL._AC_SL1500_.jpg">
+                </div>
                 <input type="text" class="inputValue" placeholder="Enter an ingredient! ">
-                <input class="button" type="submit" value="Search">        
-              </div>         
-              <div class="button is-primary">Random Drink!</div>
+                <input type="submit" value="Search" class="button is-primary">        
+              </div>       
+              <div>
+                <img class="imgC" src="https://picjumbo.com/wp-content/uploads/a-girl-drinking-milkshake-drink-in-caffe_free_stock_photos_picjumbo_IMG_7852-1570x1047.jpg" >
+              </div>  
+              <button class="button is-primary " id="btn6">Random Drink!</button>
 
         </div>
             <!--ADD CONTAINER > BUTTON / SO THAT IMAGE OF BOTTLE WILL BE PRESENT BEHIND BUTTON
@@ -80,9 +110,8 @@
                   <button class="button is-primary " id="btn3">Light Rum</button>
                   <button class="button is-primary " id="btn4">Vodka</button>
                   <button class="button is-primary " id="btn5">Gin</button>
-                   <button class="button is-primary " id="btn6">Random</button>
+                  
               </div>
-            <div id="drinkDiv"></div>  
    </section>            
   <div id="drinkDiv"></div>
 
@@ -112,3 +141,4 @@
 
 </body>
 </html>
+        
