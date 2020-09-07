@@ -8,7 +8,6 @@ url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?c=list"
 //alcoholic filters
 url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list"
 
-​
 var popularCocktailsUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/popular.php"
 var cocktailListURL = "https://www.thecocktaildb.com/api/json/v2/9973533/latest.php"
 var filterAlcoholic = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=Alcoholic"
@@ -17,21 +16,43 @@ var drinkIdSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.ph
 // whiskey urls
 var whiskeySearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=whiskey"
 var whiskeySearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=11001" // old fashion
+var whiskeySearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 178310" // Brooklyn 
+var whiskeySearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 14087" //  Red Snapper  
+var whiskeySearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 16419" //  avalanche 
+var whiskeySearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 11021" //  allegheny 
+
 // rum urls
 var rumSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=rum"
 var rumSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=17267" // Bahama Mama
+var rumSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 178320" // banana cream pi  
+var rumSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 14642" //  grim reaper
+var rumSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 17191" //  planter's punch
+var rumSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 11288" //  cuba libre
 
 //tequila urls
 var tequilaSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=tequila"
 var tequilaSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=16984" // Radioactive Long Island icetea
+var tequilaSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 11118" // blue margarita
+var tequilaSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 17216" // tommy's margarita
+var tequilaSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 178307" // tequila slammer
+var tequilaSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 14602" // tequila surprise
 
 // vodka urls 
 var vodkaSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=Vodka"
 var vodkaSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=13072" // popped cherry
+var vodkaSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=14209" // '57 Chevy with a White Licene Plate
+var vodkaSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 11462" // Harvey Wallbanger
+var vodkaSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 14622" // arctic fish
+var vodkaSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 17252" // grey hound
+
 
 // gin urls
 var ginSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=gin"
 var ginSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=12402" // tom collins
+var ginSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=11415" // Gin sling 
+var ginSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 17208" // Rose
+var ginSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 11054" // arthur tompkins
+var ginSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 17186" // clover club
 
 // random url
 var  randomCocktail = "https://www.thecocktaildb.com/api/json/v2/9973533/random.php"
@@ -46,7 +67,6 @@ $.ajax({
 	console.log(response);
 })
 
-​
 //---Ingredients
 $.ajax({
 	url: ingredientsURL,
@@ -135,20 +155,20 @@ $.ajax({
 .then(function (response) {
 	console.log(response);
 })
-​
-​
-​
+
+
+
 //drinks are in array
 //this wil need to double check functions on console logs
-​
-​
+
+
 //end of test example
-​
+
 //the button set up: this should save the data collected by user
 //that data is saved for the Ajax function via local storage
-​
+
 // whiskey button
-​
+
 var WhiskeyBtn = document.getElementById("btn1")
 WhiskeyBtn.addEventListener("click", function() {
 	$.ajax({
@@ -164,7 +184,7 @@ WhiskeyBtn.addEventListener("click", function() {
 	let img = document.createElement('img');
 	img.src = Whiskey.drinks[0].strDrinkThumb;
 	WhiskeyDiv.appendChild(img);
-​
+
 	for(let i=1; i<16; i++) {
 		console.log();
 		if(Whiskey.drinks[0][`strIngredient${i}`] == null || Whiskey.drinks[0][`strIngredient${i}`] == '' ) {
@@ -184,9 +204,9 @@ WhiskeyBtn.addEventListener("click", function() {
 		})
 		
     })
-​
+
 // rum button
-​
+
 var RumBtn = document.getElementById("btn2")
 RumBtn.addEventListener("click", function() {
 	$.ajax({
@@ -202,7 +222,7 @@ RumBtn.addEventListener("click", function() {
 	let img = document.createElement('img');
 	img.src = Rum.drinks[0].strDrinkThumb;
 	RumDiv.appendChild(img);
-​
+
 	for(let i=1; i<16; i++) {
 		console.log();
 		if(Rum.drinks[0][`strIngredient${i}`] == null || Rum.drinks[0][`strIngredient${i}`] == '' ) {
@@ -224,7 +244,7 @@ RumBtn.addEventListener("click", function() {
     })
     
 // tequila button
-​
+
 var TequilaBtn = document.getElementById("btn3")
 TequilaBtn.addEventListener("click", function() {
 	$.ajax({
@@ -241,7 +261,7 @@ TequilaBtn.addEventListener("click", function() {
 	let img = document.createElement('img');
 	img.src = Tequila.drinks[0].strDrinkThumb;
 	TequilaDiv.appendChild(img);
-​
+
 	for(let i=1; i<16; i++) {
 		console.log();
 		if(Tequila.drinks[0][`strIngredient${i}`] == null || Tequila.drinks[0][`strIngredient${i}`] == '' ) {
@@ -299,10 +319,10 @@ var vodkaBtn = document.getElementById("btn4")
             })
             
         })
-​
+
 // Gin drinks
 //for what ever reason this is the only button i could not get to work.
-​
+
 var ginBtn = document.getElementById("btn5")
     ginBtn.addEventListener("click", function() {
         $.ajax({
@@ -354,7 +374,7 @@ $.ajax({
 	let img = document.createElement('img');
 	img.src = random.drinks[0].strDrinkThumb;
 	randomDiv.appendChild(img);
-​
+
 	for(let i=1; i<16; i++) {
 		console.log();
 		if(random.drinks[0][`strIngredient${i}`] == null || random.drinks[0][`strIngredient${i}`] == '' ) {
@@ -373,3 +393,4 @@ $.ajax({
 	})
 	
 })
+// search bar
