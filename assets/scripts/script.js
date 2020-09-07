@@ -8,7 +8,8 @@ url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?c=list"
 //alcoholic filters
 url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list"
 
-var popularCocktailsUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/popular.php"
+​
+svar popularCocktailsUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/popular.php"
 var cocktailListURL = "https://www.thecocktaildb.com/api/json/v2/9973533/latest.php"
 var filterAlcoholic = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=Alcoholic"
 var bourbonSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=bourbon"
@@ -45,6 +46,7 @@ $.ajax({
 	console.log(response);
 })
 
+​
 //---Ingredients
 $.ajax({
 	url: ingredientsURL,
@@ -133,20 +135,20 @@ $.ajax({
 .then(function (response) {
 	console.log(response);
 })
-
-
-
+​
+​
+​
 //drinks are in array
 //this wil need to double check functions on console logs
-
-
+​
+​
 //end of test example
-
+​
 //the button set up: this should save the data collected by user
 //that data is saved for the Ajax function via local storage
-
+​
 // whiskey button
-
+​
 var WhiskeyBtn = document.getElementById("btn1")
 WhiskeyBtn.addEventListener("click", function() {
 	$.ajax({
@@ -162,7 +164,7 @@ WhiskeyBtn.addEventListener("click", function() {
 	let img = document.createElement('img');
 	img.src = Whiskey.drinks[0].strDrinkThumb;
 	WhiskeyDiv.appendChild(img);
-
+​
 	for(let i=1; i<16; i++) {
 		console.log();
 		if(Whiskey.drinks[0][`strIngredient${i}`] == null || Whiskey.drinks[0][`strIngredient${i}`] == '' ) {
@@ -182,9 +184,9 @@ WhiskeyBtn.addEventListener("click", function() {
 		})
 		
     })
-
+​
 // rum button
-
+​
 var RumBtn = document.getElementById("btn2")
 RumBtn.addEventListener("click", function() {
 	$.ajax({
@@ -200,7 +202,7 @@ RumBtn.addEventListener("click", function() {
 	let img = document.createElement('img');
 	img.src = Rum.drinks[0].strDrinkThumb;
 	RumDiv.appendChild(img);
-
+​
 	for(let i=1; i<16; i++) {
 		console.log();
 		if(Rum.drinks[0][`strIngredient${i}`] == null || Rum.drinks[0][`strIngredient${i}`] == '' ) {
@@ -222,7 +224,7 @@ RumBtn.addEventListener("click", function() {
     })
     
 // tequila button
-
+​
 var TequilaBtn = document.getElementById("btn3")
 TequilaBtn.addEventListener("click", function() {
 	$.ajax({
@@ -239,7 +241,7 @@ TequilaBtn.addEventListener("click", function() {
 	let img = document.createElement('img');
 	img.src = Tequila.drinks[0].strDrinkThumb;
 	TequilaDiv.appendChild(img);
-
+​
 	for(let i=1; i<16; i++) {
 		console.log();
 		if(Tequila.drinks[0][`strIngredient${i}`] == null || Tequila.drinks[0][`strIngredient${i}`] == '' ) {
@@ -297,10 +299,10 @@ var vodkaBtn = document.getElementById("btn4")
             })
             
         })
-
+​
 // Gin drinks
 //for what ever reason this is the only button i could not get to work.
-
+​
 var ginBtn = document.getElementById("btn5")
     ginBtn.addEventListener("click", function() {
         $.ajax({
@@ -352,7 +354,7 @@ $.ajax({
 	let img = document.createElement('img');
 	img.src = random.drinks[0].strDrinkThumb;
 	randomDiv.appendChild(img);
-
+​
 	for(let i=1; i<16; i++) {
 		console.log();
 		if(random.drinks[0][`strIngredient${i}`] == null || random.drinks[0][`strIngredient${i}`] == '' ) {
@@ -371,6 +373,3 @@ $.ajax({
 	})
 	
 })
-
-
-//------------------------------------------
