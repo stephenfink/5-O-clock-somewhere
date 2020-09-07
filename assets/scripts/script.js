@@ -1,53 +1,39 @@
 // this is my JS for the sake of getting console log.
-//catergories list
-url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?c=list" 
-//glasses
- var glassesURL = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?g=list"
-//ingredients
- var ingredientsURL = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list"
+//---Catergories List
+var catUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?c=list" 
+//---Glasses List
+ var glassesUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?g=list"
+//---Ingredient List
+ var ingredientsUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list"
 //alcoholic filters
-url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list"
-​
+var url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list"
 var popularCocktailsUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/popular.php"
 var cocktailListURL = "https://www.thecocktaildb.com/api/json/v2/9973533/latest.php"
 var filterAlcoholic = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=Alcoholic"
 var bourbonSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=bourbon"
-var drinkIdSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=11009" ;
-// whiskey urls
-var whiskeySearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=whiskey"
+//---Whiskey urls
 var whiskeySearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=11001" // old fashion
-// rum urls
-var rumSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=rum"
+//---Rum urls
 var rumSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=17267" // Bahama Mama
-​
-//tequila urls
-var tequilaSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=tequila"
+//---Tequila urls
 var tequilaSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=16984" // Radioactive Long Island icetea
-​
-// vodka urls 
-var vodkaSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=Vodka"
+//---Vodka urls 
 var vodkaSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=13072" // popped cherry
-​
-// gin urls
-var ginSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=gin"
+//---Gin urls
 var ginSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=12402" // tom collins
-​
-// random url
+//---Random url
 var  randomCocktail = "https://www.thecocktaildb.com/api/json/v2/9973533/random.php"
-​
-​
 //---Glasses
 $.ajax({
-	url: glassesURL,
+	url: glassesUrl,
 	method: "GET"
 })
 .then(function (response) {
 	console.log(response);
 })
-​
 //---Ingredients
 $.ajax({
-	url: ingredientsURL,
+	url: ingredientsUrl,
 	method: "GET"
 })
 .then(function (response) {
@@ -125,28 +111,12 @@ $.ajax({
 .then(function (response) {
 	console.log(response);
 })
-//---Drink ID Search
-$.ajax({
-	url: drinkIdSearch,
-	method: "GET"
-})
-.then(function (response) {
-	console.log(response);
-})
-​
-​
-​
-//drinks are in array
-//this wil need to double check functions on console logs
-​
-​
-//end of test example
-​
-//the button set up: this should save the data collected by user
-//that data is saved for the Ajax function via local storage
-​
-// whiskey button
-​
+//---drinks are in array
+//---this wil need to double check functions on console logs
+//---end of test example
+//---the button set up: this should save the data collected by user
+//---that data is saved for the Ajax function via local storage
+//---Whiskey Drinks
 var WhiskeyBtn = document.getElementById("btn1")
 WhiskeyBtn.addEventListener("click", function() {
 	$.ajax({
@@ -162,7 +132,6 @@ WhiskeyBtn.addEventListener("click", function() {
 	let img = document.createElement('img');
 	img.src = Whiskey.drinks[0].strDrinkThumb;
 	WhiskeyDiv.appendChild(img);
-​
 	for(let i=1; i<16; i++) {
 		console.log();
 		if(Whiskey.drinks[0][`strIngredient${i}`] == null || Whiskey.drinks[0][`strIngredient${i}`] == '' ) {
@@ -182,9 +151,7 @@ WhiskeyBtn.addEventListener("click", function() {
 		})
 		
     })
-​
-// rum button
-​
+//----Rum Drinks
 var RumBtn = document.getElementById("btn2")
 RumBtn.addEventListener("click", function() {
 	$.ajax({
@@ -200,7 +167,6 @@ RumBtn.addEventListener("click", function() {
 	let img = document.createElement('img');
 	img.src = Rum.drinks[0].strDrinkThumb;
 	RumDiv.appendChild(img);
-​
 	for(let i=1; i<16; i++) {
 		console.log();
 		if(Rum.drinks[0][`strIngredient${i}`] == null || Rum.drinks[0][`strIngredient${i}`] == '' ) {
@@ -219,10 +185,8 @@ RumBtn.addEventListener("click", function() {
 		
 		})
 		
-    })
-    
-// tequila button
-​
+    }) 
+//---Tequila Drinks
 var TequilaBtn = document.getElementById("btn3")
 TequilaBtn.addEventListener("click", function() {
 	$.ajax({
@@ -239,7 +203,6 @@ TequilaBtn.addEventListener("click", function() {
 	let img = document.createElement('img');
 	img.src = Tequila.drinks[0].strDrinkThumb;
 	TequilaDiv.appendChild(img);
-​
 	for(let i=1; i<16; i++) {
 		console.log();
 		if(Tequila.drinks[0][`strIngredient${i}`] == null || Tequila.drinks[0][`strIngredient${i}`] == '' ) {
@@ -259,9 +222,7 @@ TequilaBtn.addEventListener("click", function() {
 		})
 		
     })
-    
 //---Vodka Drinks
-    
 var vodkaBtn = document.getElementById("btn4")
     vodkaBtn.addEventListener("click", function() {
         $.ajax({
@@ -277,7 +238,6 @@ var vodkaBtn = document.getElementById("btn4")
         let img = document.createElement('img');
         img.src = vodka.drinks[0].strDrinkThumb;
         vodkaDiv.appendChild(img);
-    
         for(let i=1; i<16; i++) {
             console.log();
             if(vodka.drinks[0][`strIngredient${i}`] == null || vodka.drinks[0][`strIngredient${i}`] == '' ) {
@@ -297,10 +257,7 @@ var vodkaBtn = document.getElementById("btn4")
             })
             
         })
-​
-// Gin drinks
-//for what ever reason this is the only button i could not get to work.
-​
+//---Gin drinks
 var ginBtn = document.getElementById("btn5")
     ginBtn.addEventListener("click", function() {
         $.ajax({
@@ -316,7 +273,6 @@ var ginBtn = document.getElementById("btn5")
         let img = document.createElement('img');
         img.src = gin.drinks[0].strDrinkThumb;
         ginDiv.appendChild(img);
-    
         for(let i=1; i<16; i++) {
             console.log();
             if(gin.drinks[0][`strIngredient${i}`] == null || gin.drinks[0][`strIngredient${i}`] == '' ) {
@@ -352,7 +308,6 @@ $.ajax({
 	let img = document.createElement('img');
 	img.src = random.drinks[0].strDrinkThumb;
 	randomDiv.appendChild(img);
-​
 	for(let i=1; i<16; i++) {
 		console.log();
 		if(random.drinks[0][`strIngredient${i}`] == null || random.drinks[0][`strIngredient${i}`] == '' ) {
@@ -371,3 +326,54 @@ $.ajax({
 	})
 	
 })
+
+//---Ingredient Search and produce cocktail from ingredient search
+var ingredientInput = document.getElementById("ingredientInput");
+document.querySelector('form.ingredientSearch').addEventListener('submit', function (event){
+	event.preventDefault();
+	var ingredient = ingredientInput.value;
+	console.log(ingredient);
+	var ingredientSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=" + ingredient;
+	$.ajax({
+		url: ingredientSearch,
+		method: "GET"
+	})
+	.then(function (response) {
+		for (i=0; i < response.drinks.length; i++) {
+		var drinkId = response.drinks[i].idDrink
+		console.log(drinkId);
+		var drinkIdSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=" + drinkId
+		$.ajax({
+			url: drinkIdSearch,
+			method: "GET"
+		})
+		.then(function (ingrSearch) {
+			console.log(ingrSearch.drinks[0]);
+			let ingrSearchDiv = document.getElementById("drinkDiv")
+			let drinkName = document.createElement('h2');
+			drinkName.innerHTML = ingrSearch.drinks[0].strDrink;
+			ingrSearchDiv.appendChild(drinkName);
+			let img = document.createElement('img');
+			img.src = ingrSearch.drinks[0].strDrinkThumb;
+			ingrSearchDiv.appendChild(img);
+			for(let i=1; i<16; i++) {
+				console.log();
+				if(ingrSearch.drinks[0][`strIngredient${i}`] == null || ingrSearch.drinks[0][`strIngredient${i}`] == '' ) {
+					break;
+				}
+				let ingredient = document.createElement('li');
+				ingredient.innerHTML = ingrSearch.drinks[0][`strMeasure${i}`] + ': ' + ingrSearch.drinks[0][`strIngredient${i}`];
+				ingrSearchDiv.appendChild(ingredient);
+				}
+				let instructionPara = document.createElement("p");
+				instructionPara.innerHTML = ingrSearch.drinks[0].strInstructions;
+				ingrSearchDiv.appendChild(instructionPara);
+				let glassType = document.createElement("p");
+				glassType.innerHTML = "Serve drink in a " + ingrSearch.drinks[0].strGlass;
+				ingrSearchDiv.appendChild(glassType);
+			})
+
+		}
+		})
+});
+
