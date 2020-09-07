@@ -9,7 +9,7 @@ url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?c=list"
 url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list"
 
 ​
-svar popularCocktailsUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/popular.php"
+var popularCocktailsUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/popular.php"
 var cocktailListURL = "https://www.thecocktaildb.com/api/json/v2/9973533/latest.php"
 var filterAlcoholic = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=Alcoholic"
 var bourbonSearch = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=bourbon"
