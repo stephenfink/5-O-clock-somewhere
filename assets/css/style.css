@@ -1,5 +1,5 @@
- body{
-    
+body{
+    background-color: ;
     font-family: Arial, Helvetica, sans-serif;
     font-weight:bold;
     background: linear-gradient(to bottom, #33ccff 0%, #ff9966 100%);
@@ -31,7 +31,7 @@
 }
 
 .button {
-    margin:2px;
+    margin:5px;
     align-self: center;
     background-color: turquoise;
     color: whitesmoke;
@@ -45,8 +45,8 @@
     color: whitesmoke;
 }
 .topsearchbar{
-    padding: 10px;
-   
+    padding: 20px;
+    text-size-adjust: large;
 }
 .container{
     display: flex;
@@ -57,6 +57,10 @@
     background: rgba(0, 0, 0, .1);
     margin:auto;
 
+}
+
+.input{
+    background: rgba(0, 0, 0, .1);
 }
 
 
@@ -89,3 +93,21 @@
     font-size: x-large;
     text-align: center;
 }
+
+
+.navbar-item{
+    background-color:hsl(171, 100%, 41%);    
+    color: whitesmoke;
+        
+}
+.navbar-link{
+    background-color:hsl(171, 100%, 41%);    
+    color: whitesmoke;
+        
+}
+
+.navbar-dropdown{
+    background-color:hsl(171, 100%, 41%);    
+    color: whitesmoke;
+        
+} 
