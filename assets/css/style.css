@@ -73,24 +73,24 @@ body{
 
 }
 #whiskeyDiv{
-    font-size: x-large;
+    font-size: auto;
     text-align: center;
 }
 #tequilaDiv {
-    font-size: x-large;
+    font-size: auto;
     text-align: center;
 }
 
 #vodkaDiv {
-    font-size: x-large;
+    font-size: auto;
     text-align: center;
 }
 #ginDiv {
-    font-size: x-large;
+    font-size: auto;
     text-align: center;
 }
 #rumDiv {
-    font-size: x-large;
+    font-size: auto;
     text-align: center;
 }
 
