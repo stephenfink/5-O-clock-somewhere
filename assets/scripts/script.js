@@ -1,4 +1,4 @@
-// this is my JS for the sake of getting console log.
+
 //---Catergories List
 var catUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?c=list" 
 //---Glasses List
