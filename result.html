@@ -5,49 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5 ol' Clock Somewhere</title>
     
+    
     <link href="assets/css/style.css" rel="stylesheet" type = "text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  
 </head>
 <body>
-    <h1>5 ol' Clock Somewhere</h1>
-    <p>There is now a minibar where my liver once was.</p>
-    <!--Search form here-->
 
-    <div class="topnav">
-        <input type="text" placeholder="Search for a different drink?">
+    <div class="block">
+      <section class="hero is-primary">
+          <h1 class="title">5 ol' Clock Somewhere</h1>
+          <h3 class="subtitle">"In cooking you've got to have a what-the-hell attitude." ~ Julia Child</h3>
+          <!--Search form here-->
+
+     </section>
     </div>
-    <!--This is the layout of something to show on screen when open-->
-    <h2>the drink results</h2>
-    <!-- this is wehre the image of drink goes-->
-        <div class="container">
-            <div class="row">
-                <div id="finalImage"></div></br>
-                <div id="eachIngreident"></div></br>
-                <div id="eachIngreidentM"></div></br>
-                <div id="steps"></div></br>
-                <h1>Enjoy!</h1>
-                <div id="reults"></div>
-                <button class="button is-primary " id="btn5">Random</button>
-            </div>
+
+    <!-- Create Navbar to link pages together.-->
+    <div class="navbar-item has-dropdown is-hoverable">
+      <a class="navbar-link is-arrowless">
+        Check out our other options!
+      </a>
+      <div class="navbar-dropdown">
+        <a class="navbar-item" href="index.html">
+          Home
+        </a>
+        <a class="navbar-item" href="ingredients.html">
+          Top 5 Drinks
+        </a>
+        <a class="navbar-item" href="result.html">
+          Hungry?
+        </a>
+        <hr class="navbar-divider" href="#">
+    
         </div>
-
-    <div class="input">
-        <input type="text" class="inputValue" placeholder="Enter Drink ">
-        <input type="submit" value="Submit" class="button">       
+      </div>
     </div>
+  <section class="hero">
+       <div id="frontSideBar" >
+              <div class="topsearchbar">  
+                <div>
+                  <img class="imgB" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR9u9wpZLNQnxUCDGEC0hUph2sNGVSVNpYbHw&usqp=CAU">
+                </div>
+                <h3>Search by ingredient!</h3>
+                <form class = "foodIngredientSearch" >
+                  <input type="text" class="inputValue" id = foodIngredientInput placeholder="Enter an ingredient! ">
+                  <input class="button is-primary" id = foodIngredientBtn type="submit" value="Search">
+                </form>       
+              </div>       
+              <div>
+                <img class="imgC" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRg65Hm5MuL8a_RyIbXVe8q0WBjYBDCsYAQaA&usqp=CAU" >
+              </div> 
+              <br> 
+              <button class="button is-primary " id="btn1">Random Dish!</button>
 
+        </div>
+              <div id="frontBlock" class="buttons">
+                  <button class="button is-primary" id="btn2">Beef</button>  
+                  <button class="button is-primary " id="btn3">Breakfast</button>
+                  <button class="button is-primary " id="btn4">Chicken</button>
+                  <button class="button is-primary " id="btn5">Dessert</button>
+                  <button class="button is-primary " id="btn6">Pork</button>
+                  <button class="button is-primary " id="btn7">Seafood</button>
+                  <button class="button is-primary " id="btn8">Soup</button>
+                  <button class="button is-primary " id="btn9">Vegetarian</button>
+              </div>
+   </section>            
+  <div id="foodDiv"></div>
 
-     <!-- This is the layout of something to show on screen when open -->
-
-    <!-- This is the layout of something to show on screen when open -->
-
-    <h2>the drink results</h2>
-    <!-- this is where the image of drink goes-->
-
-
-<!--This is where the listed steps will go to make the drink--></div>
+    <!--the color should changed to see if CSS file is linked need to double check on it-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/scripts/script.js" type="text/javascript"></script>
+    <!--<script src="assets/scripts/script.js" type="text/javascript"></script>-->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <!--Project JS file-->
+    <script src="assets/scripts/foodScript.js" type="text/javascript"></script>
 
 </body>
 </html>
