@@ -1,5 +1,8 @@
 body{
+<<<<<<< HEAD
   
+=======
+>>>>>>> master
     font-family: Arial, Helvetica, sans-serif;
     font-weight:bold;
     background: linear-gradient(to bottom, #33ccff 0%, #ff9966 100%);
@@ -95,7 +98,6 @@ body{
 }
 
 
-
 .navbar-item{
     background-color:hsl(171, 100%, 41%);    
     color: whitesmoke;
@@ -113,6 +115,7 @@ body{
         
 } 
 
+
 .imgA{
     height: 150px;
     widows: 200px;;
@@ -124,4 +127,7 @@ body{
    .imgC{
        height: 200px;
        width: 200px
+   }
+   .center{
+       text-align: center;
    }
