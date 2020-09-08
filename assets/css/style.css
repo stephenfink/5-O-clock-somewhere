@@ -110,3 +110,20 @@ body{
     color: whitesmoke;
         
 } 
+
+#foodDiv h2 {
+    font-size: larger;
+    font-weight: bold;
+}
+
+#drinkDiv h2 {
+    font-size: larger;
+    font-weight: bold;
+}
+#foodDiv p {
+    font-weight: bold;
+}
+
+#drinkDiv p {
+    font-weight: bold;
+}
