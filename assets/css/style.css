@@ -1,5 +1,5 @@
 body{
-    background-color: ;
+  
     font-family: Arial, Helvetica, sans-serif;
     font-weight:bold;
     background: linear-gradient(to bottom, #33ccff 0%, #ff9966 100%);
@@ -113,3 +113,15 @@ body{
         
 } 
 
+.imgA{
+    height: 150px;
+    widows: 200px;;
+   }
+   .imgB{
+       height: 225px;
+       width:180px;
+      }
+   .imgC{
+       height: 200px;
+       width: 200px
+   }
