@@ -111,6 +111,22 @@ body{
         
 } 
 
+
+.imgA{
+    height: 150px;
+    widows: 200px;;
+   }
+   .imgB{
+       height: 225px;
+       width:180px;
+      }
+   .imgC{
+       height: 200px;
+       width: 200px
+   }
+   .center{
+       text-align: center;
+   }
 #foodDiv h2 {
     font-size: larger;
     font-weight: bold;
