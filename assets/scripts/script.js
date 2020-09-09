@@ -57,7 +57,7 @@ var ginSearch2 ="https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=
 var ginSearch3 ="https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 17208"; // Rose
 var ginSearch4 ="https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 11054"; // arthur tompkins
 var ginSearch5 ="https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 17186"; // clover club
-=======
+
 
 // random url
 var randomCocktail =

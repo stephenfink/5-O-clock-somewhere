@@ -1,7 +1,7 @@
 # 5-ol-clock-somewhere
 this is for the project one of the bootcamp:
 
-<img src="https://media.discordapp.net/attachments/734993613188235288/752994872826265620/unknown.png?width=821&height=462" alt="title">
+<img src="https://cdn.discordapp.com/attachments/734993613188235288/753060502506045590/unknown.png" alt="title">
 
 5 ol' Clock Somewhere is our app to help those who are staying at home and want to make their favorite drinks from the bar. 
 It gives a image, ingredients, and measurements, and how to make items.
@@ -11,13 +11,13 @@ This can be use to make a drink just for you, or become the best host amoung you
 
 ## APIs and Third Party Documentation
 The First Api is the drinks which is the first function of the app, this let users pick what type of Alcohol they want as their base.
-[Click me]("https://www.thecocktaildb.com/")
+https://www.thecocktaildb.com
 
 The Second Api is for some foods to make to enjoy with the drink.
-[Click me]("https://www.themealdb.com/")
+https://www.themealdb.com
 
 We use Bulma as our CSS document for the layout of the app.
-[Click me]("https://bulma.io/documentation/")
+https://bulma.io/documentation/
 
 ## Image of App
 This is a phone view of the app
