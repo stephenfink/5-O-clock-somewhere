@@ -10,87 +10,6 @@ var ingredientsURL =
 //alcoholic filters
 url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list";
 
-<<<<<<< HEAD
-var popularCocktailsUrl =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/popular.php";
-var cocktailListURL =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/latest.php";
-var filterAlcoholic =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=Alcoholic";
-var bourbonSearch =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=bourbon";
-var drinkIdSearch =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=11009";
-// whiskey urls
-var whiskeySearch =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=whiskey";
-var whiskeySearch1 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=11001"; // old fashion
-var whiskeySearch2 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 178310"; // Brooklyn
-var whiskeySearch3 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 14087"; //  Red Snapper
-var whiskeySearch4 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 16419"; //  avalanche
-var whiskeySearch5 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 11021"; //  allegheny
-
-// rum urls
-var rumSearch =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=rum";
-var rumSearch1 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=17267"; // Bahama Mama
-var rumSearch2 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 178320"; // banana cream pi
-var rumSearch3 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 14642"; //  grim reaper
-var rumSearch4 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 17191"; //  planter's punch
-var rumSearch5 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 11288"; //  cuba libre
-
-//tequila urls
-var tequilaSearch =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=tequila";
-var tequilaSearch1 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=16984"; // Radioactive Long Island icetea
-var tequilaSearch2 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 11118"; // blue margarita
-var tequilaSearch3 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 17216"; // tommy's margarita
-var tequilaSearch4 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 178307"; // tequila slammer
-var tequilaSearch5 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 14602"; // tequila surprise
-
-// vodka urls
-var vodkaSearch =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=Vodka";
-var vodkaSearch1 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=13072"; // popped cherry
-var vodkaSearch2 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=14029"; // '57 Chevy with a White Licene Plate
-var vodkaSearch3 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 11462"; // Harvey Wallbanger
-var vodkaSearch4 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 14622"; // arctic fish
-var vodkaSearch5 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 17252"; // grey hound
-
-// gin urls
-var ginSearch =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=gin";
-var ginSearch1 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=12402"; // tom collins
-var ginSearch2 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=11415"; // Gin sling
-var ginSearch3 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 17208"; // Rose
-var ginSearch4 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 11054"; // arthur tompkins
-var ginSearch5 =
-  "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 17186"; // clover club
-=======
 var popularCocktailsUrl ="https://www.thecocktaildb.com/api/json/v2/9973533/popular.php";
 var cocktailListURL ="https://www.thecocktaildb.com/api/json/v2/9973533/latest.php";
 var filterAlcoholic ="https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=Alcoholic";
@@ -135,7 +54,6 @@ var ginSearch2 ="https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=
 var ginSearch3 ="https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 17208"; // Rose
 var ginSearch4 ="https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 11054"; // arthur tompkins
 var ginSearch5 ="https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 17186"; // clover club
->>>>>>> master
 
 // random url
 var randomCocktail =
