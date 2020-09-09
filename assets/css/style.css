@@ -128,6 +128,48 @@ body {
 #drinkDiv p {
     font-weight: bold;
 }
+
+#cat {
+    font-weight: bold;
+    font-size: larger;
+    text-align: left;
+}
+
+#drinkDiv2 h2 {
+    font-size: larger;
+    font-weight: bold;
+}
+
+#drinkDiv2 p {
+    font-weight: bold;
+}
+
+#drinkDiv3 h2 {
+    font-size: larger;
+    font-weight: bold;
+}
+
+#drinkDiv3 p {
+    font-weight: bold;
+}
+
+#drinkDiv4 h2 {
+    font-size: larger;
+    font-weight: bold;
+}
+
+#drinkDiv4 p {
+    font-weight: bold;
+}
+
+#drinkDiv5 h2 {
+    font-size: larger;
+    font-weight: bold;
+}
+
+#drinkDiv5 p {
+    font-weight: bold;
+}
 /* this is greened out for the size and scaling issue we had had with images, keeping it for possible future use
 .navbar-dropdown{
     background-color:hsl(171, 100%, 41%);    
