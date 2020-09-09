@@ -109,8 +109,7 @@ body {
 }
 .navbar-link{
     background-color:hsl(171, 100%, 41%);    
-    color: whitesmoke;
-        
+    color: whitesmoke;     
 }
 
 #foodDiv h2 {
@@ -130,7 +129,7 @@ body {
     font-weight: bold;
 }
 
-/*.navbar-dropdown{
+.navbar-dropdown{
     background-color:hsl(171, 100%, 41%);    
     color: whitesmoke;
         
