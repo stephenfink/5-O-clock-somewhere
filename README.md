@@ -1,9 +1,9 @@
-# 5-ol-clock-somewhere
+# 5-O-clock-somewhere
 this is for the project one of the bootcamp:
 
 <img src="https://cdn.discordapp.com/attachments/734993613188235288/753060502506045590/unknown.png" alt="title">
 
-5 ol' Clock Somewhere is our app to help those who are staying at home and want to make their favorite drinks from the bar. 
+5 O' Clock Somewhere is our app to help those who are staying at home and want to make their favorite drinks from the bar. 
 It gives a image, ingredients, and measurements, and how to make items.
 
 This can be use to make a drink just for you, or become the best host amoung your friends.
