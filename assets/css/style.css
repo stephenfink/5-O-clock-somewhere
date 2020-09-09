@@ -4,6 +4,9 @@ body{
     background: linear-gradient(to bottom, #33ccff 0%, #ff9966 100%);
     
 }
+#top5Container {
+    background: linear-gradient(to bottom, #33ccff 0%, #ff9966 100%);
+}
 
 #inputValue{
     align-items: center;
