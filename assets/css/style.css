@@ -128,7 +128,7 @@ body {
 #drinkDiv p {
     font-weight: bold;
 }
-
+/* this is greened out for the size and scaling issue we had had with images, keeping it for possible future use
 .navbar-dropdown{
     background-color:hsl(171, 100%, 41%);    
     color: whitesmoke;
