@@ -10,7 +10,7 @@ var url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list"
 var popularCocktailsUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/popular.php"
 var cocktailListURL = "https://www.thecocktaildb.com/api/json/v2/9973533/latest.php"
 var filterAlcoholic = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=Alcoholic"
-//---Whiskey Drinks
+//---Bourbon Drinks
 var bourbonBtn = document.getElementById("btn1")
 bourbonBtn.addEventListener("click", function() {
 	event.preventDefault();
@@ -32,10 +32,16 @@ bourbonBtn.addEventListener("click", function() {
 			let bourbonDiv = document.getElementById("drinkDiv")
 			let drinkName = document.createElement('h2');
 			drinkName.innerHTML = bourbon.drinks[0].strDrink;
-			bourbonDiv.appendChild(drinkName);
 			let img = document.createElement('img');
 			img.src = bourbon.drinks[0].strDrinkThumb;
-			bourbonDiv.appendChild(img);
+			let bourbonBr = document.createElement("br");
+			bourbonDiv.prepend(bourbonBr);
+			let glassType = document.createElement("p");
+			glassType.innerHTML = "Serve drink in a " + bourbon.drinks[0].strGlass;
+			bourbonDiv.prepend(glassType);
+			let instructionPara = document.createElement("p");
+			instructionPara.innerHTML = bourbon.drinks[0].strInstructions;
+			bourbonDiv.prepend(instructionPara);
 			for(let i=1; i<16; i++) {
 				console.log();
 				if(bourbon.drinks[0][`strIngredient${i}`] == null || bourbon.drinks[0][`strIngredient${i}`] == '' ) {
@@ -43,18 +49,11 @@ bourbonBtn.addEventListener("click", function() {
 				}
 				let ingredient = document.createElement('li');
 				ingredient.innerHTML = bourbon.drinks[0][`strMeasure${i}`] + ': ' + bourbon.drinks[0][`strIngredient${i}`];
-				bourbonDiv.appendChild(ingredient);
+				bourbonDiv.prepend(ingredient);
 				}
-				let instructionPara = document.createElement("p");
-				instructionPara.innerHTML = bourbon.drinks[0].strInstructions;
-				bourbonDiv.appendChild(instructionPara);
-				let glassType = document.createElement("p");
-				glassType.innerHTML = "Serve drink in a " + bourbon.drinks[0].strGlass;
-				bourbonDiv.appendChild(glassType);
-				let bourbonBr = document.createElement("br");
-                bourbonDiv.appendChild(bourbonBr);
+				bourbonDiv.prepend(img);
+				bourbonDiv.prepend(drinkName);
 			})
-
 		}
 		})
 })
@@ -80,10 +79,16 @@ RumBtn.addEventListener("click", function() {
 			let rumDiv = document.getElementById("drinkDiv")
 			let drinkName = document.createElement('h2');
 			drinkName.innerHTML = rum.drinks[0].strDrink;
-			rumDiv.appendChild(drinkName);
 			let img = document.createElement('img');
 			img.src = rum.drinks[0].strDrinkThumb;
-			rumDiv.appendChild(img);
+			let rumBr = document.createElement("br");
+			rumDiv.prepend(rumBr);
+			let glassType = document.createElement("p");
+			glassType.innerHTML = "Serve drink in a " + rum.drinks[0].strGlass;
+			rumDiv.prepend(glassType);
+			let instructionPara = document.createElement("p");
+			instructionPara.innerHTML = rum.drinks[0].strInstructions;
+			rumDiv.prepend(instructionPara);
 			for(let i=1; i<16; i++) {
 				console.log();
 				if(rum.drinks[0][`strIngredient${i}`] == null || rum.drinks[0][`strIngredient${i}`] == '' ) {
@@ -91,18 +96,11 @@ RumBtn.addEventListener("click", function() {
 				}
 				let ingredient = document.createElement('li');
 				ingredient.innerHTML = rum.drinks[0][`strMeasure${i}`] + ': ' + rum.drinks[0][`strIngredient${i}`];
-				rumDiv.appendChild(ingredient);
+				rumDiv.prepend(ingredient);
 				}
-				let instructionPara = document.createElement("p");
-				instructionPara.innerHTML = rum.drinks[0].strInstructions;
-				rumDiv.appendChild(instructionPara);
-				let glassType = document.createElement("p");
-				glassType.innerHTML = "Serve drink in a " + rum.drinks[0].strGlass;
-				rumDiv.appendChild(glassType);
-				let rumBr = document.createElement("br");
-                rumDiv.appendChild(rumBr);
+				rumDiv.prepend(img);
+				rumDiv.prepend(drinkName);
 			})
-
 		}
 		})
 })
@@ -129,10 +127,16 @@ TequilaBtn.addEventListener("click", function() {
 			let tequilaDiv = document.getElementById("drinkDiv")
 			let drinkName = document.createElement('h2');
 			drinkName.innerHTML = tequila.drinks[0].strDrink;
-			tequilaDiv.appendChild(drinkName);
 			let img = document.createElement('img');
 			img.src = tequila.drinks[0].strDrinkThumb;
-			tequilaDiv.appendChild(img);
+			let tequilaBr = document.createElement("br");
+			tequilaDiv.prepend(tequilaBr);
+			let glassType = document.createElement("p");
+			glassType.innerHTML = "Serve drink in a " + tequila.drinks[0].strGlass;
+			tequilaDiv.prepend(glassType);
+			let instructionPara = document.createElement("p");
+			instructionPara.innerHTML = tequila.drinks[0].strInstructions;
+			tequilaDiv.prepend(instructionPara);
 			for(let i=1; i<16; i++) {
 				console.log();
 				if(tequila.drinks[0][`strIngredient${i}`] == null || tequila.drinks[0][`strIngredient${i}`] == '' ) {
@@ -140,18 +144,11 @@ TequilaBtn.addEventListener("click", function() {
 				}
 				let ingredient = document.createElement('li');
 				ingredient.innerHTML = tequila.drinks[0][`strMeasure${i}`] + ': ' + tequila.drinks[0][`strIngredient${i}`];
-				tequilaDiv.appendChild(ingredient);
+				tequilaDiv.prepend(ingredient);
 				}
-				let instructionPara = document.createElement("p");
-				instructionPara.innerHTML = tequila.drinks[0].strInstructions;
-				tequilaDiv.appendChild(instructionPara);
-				let glassType = document.createElement("p");
-				glassType.innerHTML = "Serve drink in a " + tequila.drinks[0].strGlass;
-				tequilaDiv.appendChild(glassType);
-				let tequilaBr = document.createElement("br");
-                tequilaDiv.appendChild(tequilaBr);
+				tequilaDiv.prepend(img);
+				tequilaDiv.prepend(drinkName);	
 			})
-
 		}
 		})
 })
@@ -178,10 +175,16 @@ vodkaBtn.addEventListener("click", function() {
 			let vodkaDiv = document.getElementById("drinkDiv")
 			let drinkName = document.createElement('h2');
 			drinkName.innerHTML = vodka.drinks[0].strDrink;
-			vodkaDiv.appendChild(drinkName);
 			let img = document.createElement('img');
 			img.src = vodka.drinks[0].strDrinkThumb;
-			vodkaDiv.appendChild(img);
+			let vodkaBr = document.createElement("br");
+			vodkaDiv.prepend(vodkaBr);
+			let glassType = document.createElement("p");
+			glassType.innerHTML = "Serve drink in a " + vodka.drinks[0].strGlass;
+			vodkaDiv.prepend(glassType);
+			let instructionPara = document.createElement("p");
+			instructionPara.innerHTML = vodka.drinks[0].strInstructions;
+			vodkaDiv.prepend(instructionPara);
 			for(let i=1; i<16; i++) {
 				console.log();
 				if(vodka.drinks[0][`strIngredient${i}`] == null || vodka.drinks[0][`strIngredient${i}`] == '' ) {
@@ -189,18 +192,13 @@ vodkaBtn.addEventListener("click", function() {
 				}
 				let ingredient = document.createElement('li');
 				ingredient.innerHTML = vodka.drinks[0][`strMeasure${i}`] + ': ' + vodka.drinks[0][`strIngredient${i}`];
-				vodkaDiv.appendChild(ingredient);
+				vodkaDiv.prepend(ingredient);
 				}
-				let instructionPara = document.createElement("p");
-				instructionPara.innerHTML = vodka.drinks[0].strInstructions;
-				vodkaDiv.appendChild(instructionPara);
-				let glassType = document.createElement("p");
-				glassType.innerHTML = "Serve drink in a " + vodka.drinks[0].strGlass;
-				vodkaDiv.appendChild(glassType);
-				let vodkaBr = document.createElement("br");
-                vodkaDiv.appendChild(vodkaBr);
+				vodkaDiv.prepend(img);
+				vodkaDiv.prepend(drinkName);
+				
+				
 			})
-
 		}
 		})
 })
@@ -227,10 +225,16 @@ ginBtn.addEventListener("click", function() {
 			let ginDiv = document.getElementById("drinkDiv")
 			let drinkName = document.createElement('h2');
 			drinkName.innerHTML = gin.drinks[0].strDrink;
-			ginDiv.appendChild(drinkName);
 			let img = document.createElement('img');
 			img.src = gin.drinks[0].strDrinkThumb;
-			ginDiv.appendChild(img);
+			let ginBr = document.createElement("br");
+			ginDiv.prepend(ginBr);
+			let glassType = document.createElement("p");
+			glassType.innerHTML = "Serve drink in a " + gin.drinks[0].strGlass;
+			ginDiv.prepend(glassType);
+			let instructionPara = document.createElement("p");
+			instructionPara.innerHTML = gin.drinks[0].strInstructions;
+			ginDiv.prepend(instructionPara);
 			for(let i=1; i<16; i++) {
 				console.log();
 				if(gin.drinks[0][`strIngredient${i}`] == null || gin.drinks[0][`strIngredient${i}`] == '' ) {
@@ -238,18 +242,11 @@ ginBtn.addEventListener("click", function() {
 				}
 				let ingredient = document.createElement('li');
 				ingredient.innerHTML = gin.drinks[0][`strMeasure${i}`] + ': ' + gin.drinks[0][`strIngredient${i}`];
-				ginDiv.appendChild(ingredient);
+				ginDiv.prepend(ingredient);
 				}
-				let instructionPara = document.createElement("p");
-				instructionPara.innerHTML = gin.drinks[0].strInstructions;
-				ginDiv.appendChild(instructionPara);
-				let glassType = document.createElement("p");
-				glassType.innerHTML = "Serve drink in a " + gin.drinks[0].strGlass;
-				ginDiv.appendChild(glassType);
-				let ginBr = document.createElement("br");
-                ginDiv.appendChild(ginBr);
+				ginDiv.prepend(img);
+				ginDiv.prepend(drinkName);
 			})
-
 		}
 		})
 })
@@ -267,10 +264,16 @@ $.ajax({
 	let randomDiv = document.getElementById("drinkDiv")
 	let drinkName = document.createElement('h2');
 	drinkName.innerHTML = random.drinks[0].strDrink;
-	randomDiv.appendChild(drinkName);
 	let img = document.createElement('img');
 	img.src = random.drinks[0].strDrinkThumb;
-	randomDiv.appendChild(img);
+	let randomBr = document.createElement("br");
+	randomDiv.prepend(randomBr);
+	let glassType = document.createElement("p");
+	glassType.innerHTML = "Serve drink in a " + random.drinks[0].strGlass;
+	randomDiv.prepend(glassType);
+	let instructionPara = document.createElement("p");
+	instructionPara.innerHTML = random.drinks[0].strInstructions;
+	randomDiv.prepend(instructionPara);
 	for(let i=1; i<16; i++) {
 		console.log();
 		if(random.drinks[0][`strIngredient${i}`] == null || random.drinks[0][`strIngredient${i}`] == '' ) {
@@ -278,18 +281,11 @@ $.ajax({
 		}
 		let ingredient = document.createElement('li');
 		ingredient.innerHTML = random.drinks[0][`strMeasure${i}`] + ': ' + random.drinks[0][`strIngredient${i}`];
-		randomDiv.appendChild(ingredient);
+		randomDiv.prepend(ingredient);
 		}
-		let instructionPara = document.createElement("p");
-		instructionPara.innerHTML = random.drinks[0].strInstructions;
-		randomDiv.appendChild(instructionPara);
-		let glassType = document.createElement("p");
-		glassType.innerHTML = "Serve drink in a " + random.drinks[0].strGlass;
-		randomDiv.appendChild(glassType);
-		let randomBr = document.createElement("br");
-    	randomDiv.appendChild(randomBr);
-	})
-	
+		randomDiv.prepend(img);
+		randomDiv.prepend(drinkName);	
+	})	
 })
 
 //---Ingredient Search and produce cocktail from ingredient search
@@ -317,10 +313,16 @@ document.querySelector('form.ingredientSearch').addEventListener('submit', funct
 			let ingrSearchDiv = document.getElementById("drinkDiv")
 			let drinkName = document.createElement('h2');
 			drinkName.innerHTML = ingrSearch.drinks[0].strDrink;
-			ingrSearchDiv.appendChild(drinkName);
 			let img = document.createElement('img');
 			img.src = ingrSearch.drinks[0].strDrinkThumb;
-			ingrSearchDiv.appendChild(img);
+			let instructionBr = document.createElement("br");
+			ingrSearchDiv.prepend(instructionBr);
+			let glassType = document.createElement("p");
+			glassType.innerHTML = "Serve drink in a " + ingrSearch.drinks[0].strGlass;
+			ingrSearchDiv.prepend(glassType);
+			let instructionPara = document.createElement("p");
+			instructionPara.innerHTML = ingrSearch.drinks[0].strInstructions;
+			ingrSearchDiv.prepend(instructionPara);
 			for(let i=1; i<16; i++) {
 				console.log();
 				if(ingrSearch.drinks[0][`strIngredient${i}`] == null || ingrSearch.drinks[0][`strIngredient${i}`] == '' ) {
@@ -328,18 +330,11 @@ document.querySelector('form.ingredientSearch').addEventListener('submit', funct
 				}
 				let ingredient = document.createElement('li');
 				ingredient.innerHTML = ingrSearch.drinks[0][`strMeasure${i}`] + ': ' + ingrSearch.drinks[0][`strIngredient${i}`];
-				ingrSearchDiv.appendChild(ingredient);
+				ingrSearchDiv.prepend(ingredient);
 				}
-				let instructionPara = document.createElement("p");
-				instructionPara.innerHTML = ingrSearch.drinks[0].strInstructions;
-				ingrSearchDiv.appendChild(instructionPara);
-				let glassType = document.createElement("p");
-				glassType.innerHTML = "Serve drink in a " + ingrSearch.drinks[0].strGlass;
-				ingrSearchDiv.appendChild(glassType);
-				let instructionBr = document.createElement("br");
-                ingrSearchDiv.appendChild(instructionBr);
+				ingrSearchDiv.prepend(img);
+				ingrSearchDiv.prepend(drinkName);	
 			})
-
 		}
 		})
 });

@@ -55,10 +55,13 @@ document.querySelector('form.foodIngredientSearch').addEventListener('submit', f
             let ingredientSearchDiv = document.getElementById("foodDiv")
             let mealName = document.createElement('h2');
             mealName.innerHTML = ingredientSearch.meals[0].strMeal;
-            ingredientSearchDiv.appendChild(mealName);
             let img = document.createElement('img');
             img.src = ingredientSearch.meals[0].strMealThumb;
-            ingredientSearchDiv.appendChild(img);
+            let instructionBr = document.createElement("br");
+            ingredientSearchDiv.prepend(instructionBr);
+            let instructionPara = document.createElement("p");
+            instructionPara.innerHTML = ingredientSearch.meals[0].strInstructions;
+            ingredientSearchDiv.prepend(instructionPara);
             for(let i=1; i<21; i++) {
                 console.log();
                 if(ingredientSearch.meals[0][`strIngredient${i}`] == null || ingredientSearch.meals[0][`strIngredient${i}`] == '' ) {
@@ -66,15 +69,11 @@ document.querySelector('form.foodIngredientSearch').addEventListener('submit', f
                 }
                 let ingredient = document.createElement('li');
                 ingredient.innerHTML = ingredientSearch.meals[0][`strMeasure${i}`] + ': ' + ingredientSearch.meals[0][`strIngredient${i}`];
-                ingredientSearchDiv.appendChild(ingredient);
+                ingredientSearchDiv.prepend(ingredient);
                 }
-                let instructionPara = document.createElement("p");
-                instructionPara.innerHTML = ingredientSearch.meals[0].strInstructions;
-                ingredientSearchDiv.appendChild(instructionPara);
-                let instructionBr = document.createElement("br");
-                ingredientSearchDiv.appendChild(instructionBr);
+                ingredientSearchDiv.prepend(img);
+                ingredientSearchDiv.prepend(mealName);
             })
-
 		}
 		})
 })
@@ -90,76 +89,28 @@ $.ajax({
 	let randomDiv = document.getElementById("foodDiv")
 	let mealName = document.createElement('h2');
 	mealName.innerHTML = random.meals[0].strMeal;
-	randomDiv.appendChild(mealName);
 	let img = document.createElement('img');
-	img.src = random.meals[0].strMealThumb;
-	randomDiv.appendChild(img);
+    img.src = random.meals[0].strMealThumb;
+    let randomBr = document.createElement("br");
+    randomDiv.prepend(randomBr);
+    let instructionPara = document.createElement("p");
+	instructionPara.innerHTML = random.meals[0].strInstructions;
+    randomDiv.prepend(instructionPara);
 	for(let i=1; i<21; i++) {
 		console.log();
 		if(random.meals[0][`strIngredient${i}`] == null || random.meals[0][`strIngredient${i}`] == '' ) {
 			break;
 		}
 		let ingredient = document.createElement('li');
-		ingredient.innerHTML = random.meals[0][`strMeasure${i}`] + ': ' + random.meals[0][`strIngredient${i}`];
-		randomDiv.appendChild(ingredient);
+        ingredient.innerHTML = random.meals[0][`strMeasure${i}`] + ': ' + random.meals[0][`strIngredient${i}`];
+        randomDiv.prepend(ingredient);
 		}
-		let instructionPara = document.createElement("p");
-		instructionPara.innerHTML = random.meals[0].strInstructions;
-        randomDiv.appendChild(instructionPara);
-        let randomBr = document.createElement("br");
-        randomDiv.appendChild(randomBr);
+        randomDiv.prepend(img);
+        randomDiv.prepend(mealName);
     })
 })
-
-//----Beef Dishes
-var beefBtn = document.getElementById("btn2")
-beefBtn.addEventListener("click", function() {
-	event.preventDefault();
-	var beefDish = "https://www.themealdb.com/api/json/v2/9973533/filter.php?i=beef"
-	$.ajax({
-		url: beefDish,
-		method: "GET"
-	})
-	.then(function (response) {
-		for (i=0; i < response.meals.length; i++) {
-		var mealId = response.meals[i].idMeal
-		console.log(mealId);
-		var mealIdSearch = "https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=" + mealId
-		$.ajax({
-			url: mealIdSearch,
-			method: "GET"
-		})
-		.then(function (beef) {
-            console.log(beef.meals[0]);
-            let beefDiv = document.getElementById("foodDiv")
-            let mealName = document.createElement('h2');
-            mealName.innerHTML = beef.meals[0].strMeal;
-            beefDiv.appendChild(mealName);
-            let img = document.createElement('img');
-            img.src = beef.meals[0].strMealThumb;
-            beefDiv.appendChild(img);
-            for(let i=1; i<21; i++) {
-                console.log();
-                if(beef.meals[0][`strIngredient${i}`] == null || beef.meals[0][`strIngredient${i}`] == '' ) {
-                    break;
-                }
-                let ingredient = document.createElement('li');
-                ingredient.innerHTML = beef.meals[0][`strMeasure${i}`] + ': ' + beef.meals[0][`strIngredient${i}`];
-                beefDiv.appendChild(ingredient);
-                }
-                let instructionPara = document.createElement("p");
-                instructionPara.innerHTML = beef.meals[0].strInstructions;
-                beefDiv.appendChild(instructionPara);
-                let beefBr = document.createElement("br");
-                beefDiv.appendChild(beefBr);
-            })
-
-		}
-		})
-		
-    }) 
 //----Breakfast Dishes
-var breakfastBtn = document.getElementById("btn3")
+var breakfastBtn = document.getElementById("btn2")
 breakfastBtn.addEventListener("click", function() {
 	event.preventDefault();
 	var breakfastDishes = "https://www.themealdb.com/api/json/v2/9973533/filter.php?c=breakfast"
@@ -181,10 +132,13 @@ breakfastBtn.addEventListener("click", function() {
             let breakfastDiv = document.getElementById("foodDiv")
             let mealName = document.createElement('h2');
             mealName.innerHTML = breakfast.meals[0].strMeal;
-            breakfastDiv.appendChild(mealName);
             let img = document.createElement('img');
             img.src = breakfast.meals[0].strMealThumb;
-            breakfastDiv.appendChild(img);
+            let breakfastBr = document.createElement("br");
+            breakfastDiv.prepend(breakfastBr);
+            let instructionPara = document.createElement("p");
+            instructionPara.innerHTML = breakfast.meals[0].strInstructions;
+            breakfastDiv.prepend(instructionPara);
             for(let i=1; i<21; i++) {
                 console.log();
                 if(breakfast.meals[0][`strIngredient${i}`] == null || breakfast.meals[0][`strIngredient${i}`] == '' ) {
@@ -192,19 +146,60 @@ breakfastBtn.addEventListener("click", function() {
                 }
                 let ingredient = document.createElement('li');
                 ingredient.innerHTML = breakfast.meals[0][`strMeasure${i}`] + ': ' + breakfast.meals[0][`strIngredient${i}`];
-                breakfastDiv.appendChild(ingredient);
+                breakfastDiv.prepend(ingredient);
                 }
-                let instructionPara = document.createElement("p");
-                instructionPara.innerHTML = breakfast.meals[0].strInstructions;
-                breakfastDiv.appendChild(instructionPara);
-                let breakfastBr = document.createElement("br");
-                breakfastDiv.appendChild(breakfastBr);
+                breakfastDiv.prepend(img);
+                breakfastDiv.prepend(mealName);
             })
-
 		}
 		})
-		
     }) 
+
+//----Beef Dishes
+var beefBtn = document.getElementById("btn3")
+beefBtn.addEventListener("click", function() {
+	event.preventDefault();
+	var beefDish = "https://www.themealdb.com/api/json/v2/9973533/filter.php?i=beef"
+	$.ajax({
+		url: beefDish,
+		method: "GET"
+	})
+	.then(function (response) {
+		for (i=0; i < response.meals.length; i++) {
+		var mealId = response.meals[i].idMeal
+		console.log(mealId);
+		var mealIdSearch = "https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=" + mealId
+		$.ajax({
+			url: mealIdSearch,
+			method: "GET"
+		})
+		.then(function (beef) {
+            console.log(beef.meals[0]);
+            let beefDiv = document.getElementById("foodDiv")
+            let mealName = document.createElement('h2');
+            mealName.innerHTML = beef.meals[0].strMeal;
+            let img = document.createElement('img');
+            img.src = beef.meals[0].strMealThumb;
+            let beefBr = document.createElement("br");
+            beefDiv.prepend(beefBr);
+            let instructionPara = document.createElement("p");
+            instructionPara.innerHTML = beef.meals[0].strInstructions;
+            beefDiv.prepend(instructionPara);
+            for(let i=1; i<21; i++) {
+                console.log();
+                if(beef.meals[0][`strIngredient${i}`] == null || beef.meals[0][`strIngredient${i}`] == '' ) {
+                    break;
+                }
+                let ingredient = document.createElement('li');
+                ingredient.innerHTML = beef.meals[0][`strMeasure${i}`] + ': ' + beef.meals[0][`strIngredient${i}`];
+                beefDiv.prepend(ingredient);
+                }
+                beefDiv.prepend(img);
+                beefDiv.prepend(mealName);
+            })
+		}
+		})
+    })
 
 //---Chicken Dishes
 var chickenBtn = document.getElementById("btn4")
@@ -229,10 +224,13 @@ chickenBtn.addEventListener("click", function() {
             let chickenDiv = document.getElementById("foodDiv")
             let mealName = document.createElement('h2');
             mealName.innerHTML = chicken.meals[0].strMeal;
-            chickenDiv.appendChild(mealName);
             let img = document.createElement('img');
             img.src = chicken.meals[0].strMealThumb;
-            chickenDiv.appendChild(img);
+            let chickenBr = document.createElement("br");
+            chickenDiv.prepend(chickenBr);
+            let instructionPara = document.createElement("p");
+            instructionPara.innerHTML = chicken.meals[0].strInstructions;
+            chickenDiv.prepend(instructionPara);
             for(let i=1; i<21; i++) {
                 console.log();
                 if(chicken.meals[0][`strIngredient${i}`] == null || chicken.meals[0][`strIngredient${i}`] == '' ) {
@@ -240,18 +238,13 @@ chickenBtn.addEventListener("click", function() {
                 }
                 let ingredient = document.createElement('li');
                 ingredient.innerHTML = chicken.meals[0][`strMeasure${i}`] + ': ' + chicken.meals[0][`strIngredient${i}`];
-                chickenDiv.appendChild(ingredient);
+                chickenDiv.prepend(ingredient);
                 }
-                let instructionPara = document.createElement("p");
-                instructionPara.innerHTML = chicken.meals[0].strInstructions;
-                chickenDiv.appendChild(instructionPara);
-                let chickenBr = document.createElement("br");
-                chickenDiv.appendChild(chickenBr);
+                chickenDiv.prepend(img);
+                chickenDiv.prepend(mealName);
             })
-
 		}
 		})
-		
     })
 
 //---Dessert Dishes
@@ -277,10 +270,13 @@ dessertBtn.addEventListener("click", function() {
             let dessertDiv = document.getElementById("foodDiv")
             let mealName = document.createElement('h2');
             mealName.innerHTML = dessert.meals[0].strMeal;
-            dessertDiv.appendChild(mealName);
             let img = document.createElement('img');
             img.src = dessert.meals[0].strMealThumb;
-            dessertDiv.appendChild(img);
+            let dessertBr = document.createElement("br");
+            dessertDiv.prepend(dessertBr);
+            let instructionPara = document.createElement("p");
+            instructionPara.innerHTML = dessert.meals[0].strInstructions;
+            dessertDiv.prepend(instructionPara);
             for(let i=1; i<21; i++) {
                 console.log();
                 if(dessert.meals[0][`strIngredient${i}`] == null || dessert.meals[0][`strIngredient${i}`] == '' ) {
@@ -288,21 +284,15 @@ dessertBtn.addEventListener("click", function() {
                 }
                 let ingredient = document.createElement('li');
                 ingredient.innerHTML = dessert.meals[0][`strMeasure${i}`] + ': ' + dessert.meals[0][`strIngredient${i}`];
-                dessertDiv.appendChild(ingredient);
+                dessertDiv.prepend(ingredient);
                 }
-                let instructionPara = document.createElement("p");
-                instructionPara.innerHTML = dessert.meals[0].strInstructions;
-                dessertDiv.appendChild(instructionPara);
-                let dessertBr = document.createElement("br");
-                dessertDiv.appendChild(dessertBr);
+                dessertDiv.prepend(img);
+                dessertDiv.prepend(mealName);
             })
-
 		}
 		})
-		
     }) 
  
-
 //---Pork Dishes
 var porkBtn = document.getElementById("btn6")
 porkBtn.addEventListener("click", function() {
@@ -326,10 +316,13 @@ porkBtn.addEventListener("click", function() {
             let porkDiv = document.getElementById("foodDiv")
             let mealName = document.createElement('h2');
             mealName.innerHTML = pork.meals[0].strMeal;
-            porkDiv.appendChild(mealName);
             let img = document.createElement('img');
             img.src = pork.meals[0].strMealThumb;
-            porkDiv.appendChild(img);
+            let porkBr = document.createElement("br");
+            porkDiv.prepend(porkBr);
+            let instructionPara = document.createElement("p");
+            instructionPara.innerHTML = pork.meals[0].strInstructions;
+            porkDiv.prepend(instructionPara);
             for(let i=1; i<21; i++) {
                 console.log();
                 if(pork.meals[0][`strIngredient${i}`] == null || pork.meals[0][`strIngredient${i}`] == '' ) {
@@ -337,18 +330,13 @@ porkBtn.addEventListener("click", function() {
                 }
                 let ingredient = document.createElement('li');
                 ingredient.innerHTML = pork.meals[0][`strMeasure${i}`] + ': ' + pork.meals[0][`strIngredient${i}`];
-                porkDiv.appendChild(ingredient);
+                porkDiv.prepend(ingredient);
                 }
-                let instructionPara = document.createElement("p");
-                instructionPara.innerHTML = pork.meals[0].strInstructions;
-                porkDiv.appendChild(instructionPara);
-                let porkBr = document.createElement("br");
-                porkDiv.appendChild(porkBr);
+                porkDiv.prepend(img);
+                porkDiv.prepend(mealName);
             })
-
 		}
 		})
-		
     }) 
 
 //---Seafood Dishes
@@ -374,10 +362,13 @@ seafoodBtn.addEventListener("click", function() {
             let seafoodDiv = document.getElementById("foodDiv")
             let mealName = document.createElement('h2');
             mealName.innerHTML = seafood.meals[0].strMeal;
-            seafoodDiv.appendChild(mealName);
             let img = document.createElement('img');
             img.src = seafood.meals[0].strMealThumb;
-            seafoodDiv.appendChild(img);
+            let seafoodBr = document.createElement("br");
+            seafoodDiv.prepend(seafoodBr);
+            let instructionPara = document.createElement("p");
+            instructionPara.innerHTML = seafood.meals[0].strInstructions;
+            seafoodDiv.prepend(instructionPara);
             for(let i=1; i<21; i++) {
                 console.log();
                 if(seafood.meals[0][`strIngredient${i}`] == null || seafood.meals[0][`strIngredient${i}`] == '' ) {
@@ -385,19 +376,15 @@ seafoodBtn.addEventListener("click", function() {
                 }
                 let ingredient = document.createElement('li');
                 ingredient.innerHTML = seafood.meals[0][`strMeasure${i}`] + ': ' + seafood.meals[0][`strIngredient${i}`];
-                seafoodDiv.appendChild(ingredient);
+                seafoodDiv.prepend(ingredient);
                 }
-                let instructionPara = document.createElement("p");
-                instructionPara.innerHTML = seafood.meals[0].strInstructions;
-                seafoodDiv.appendChild(instructionPara);
-                let seafoodBr = document.createElement("br");
-                seafoodDiv.appendChild(seafoodBr);
+                seafoodDiv.prepend(img);
+                seafoodDiv.prepend(mealName);
             })
-
 		}
 		})
-		
     }) 
+
 //---Soup Dishes
 var soupBtn = document.getElementById("btn8")
 soupBtn.addEventListener("click", function() {
@@ -421,10 +408,13 @@ soupBtn.addEventListener("click", function() {
             let soupDiv = document.getElementById("foodDiv")
             let mealName = document.createElement('h2');
             mealName.innerHTML = soup.meals[0].strMeal;
-            soupDiv.appendChild(mealName);
             let img = document.createElement('img');
             img.src = soup.meals[0].strMealThumb;
-            soupDiv.appendChild(img);
+            let soupBr = document.createElement("br");
+            soupDiv.prepend(soupBr);
+            let instructionPara = document.createElement("p");
+            instructionPara.innerHTML = soup.meals[0].strInstructions;
+            soupDiv.prepend(instructionPara);
             for(let i=1; i<21; i++) {
                 console.log();
                 if(soup.meals[0][`strIngredient${i}`] == null || soup.meals[0][`strIngredient${i}`] == '' ) {
@@ -432,18 +422,13 @@ soupBtn.addEventListener("click", function() {
                 }
                 let ingredient = document.createElement('li');
                 ingredient.innerHTML = soup.meals[0][`strMeasure${i}`] + ': ' + soup.meals[0][`strIngredient${i}`];
-                soupDiv.appendChild(ingredient);
+                soupDiv.prepend(ingredient);
                 }
-                let instructionPara = document.createElement("p");
-                instructionPara.innerHTML = soup.meals[0].strInstructions;
-                soupDiv.appendChild(instructionPara);
-                let soupBr = document.createElement("br");
-                soupDiv.appendChild(soupBr);
+                soupDiv.prepend(img);
+                soupDiv.prepend(mealName);
             })
-
 		}
-		})
-		
+		})	
     }) 
  
 //---Vegetarian Dishes
@@ -469,10 +454,13 @@ vegetarianBtn.addEventListener("click", function() {
             let vegetarianDiv = document.getElementById("foodDiv")
             let mealName = document.createElement('h2');
             mealName.innerHTML = vegetarian.meals[0].strMeal;
-            vegetarianDiv.appendChild(mealName);
             let img = document.createElement('img');
             img.src = vegetarian.meals[0].strMealThumb;
-            vegetarianDiv.appendChild(img);
+            let vegetarianBr = document.createElement("br");
+            vegetarianDiv.prepend(vegetarianBr);
+            let instructionPara = document.createElement("p");
+            instructionPara.innerHTML = vegetarian.meals[0].strInstructions;
+            vegetarianDiv.prepend(instructionPara);
             for(let i=1; i<21; i++) {
                 console.log();
                 if(vegetarian.meals[0][`strIngredient${i}`] == null || vegetarian.meals[0][`strIngredient${i}`] == '' ) {
@@ -480,18 +468,13 @@ vegetarianBtn.addEventListener("click", function() {
                 }
                 let ingredient = document.createElement('li');
                 ingredient.innerHTML = vegetarian.meals[0][`strMeasure${i}`] + ': ' + vegetarian.meals[0][`strIngredient${i}`];
-                vegetarianDiv.appendChild(ingredient);
+                vegetarianDiv.prepend(ingredient);
                 }
-                let instructionPara = document.createElement("p");
-                instructionPara.innerHTML = vegetarian.meals[0].strInstructions;
-                vegetarianDiv.appendChild(instructionPara);
-                let vegetarianBr = document.createElement("br");
-                vegetarianDiv.appendChild(vegetarianBr);
+                vegetarianDiv.prepend(img);
+                vegetarianDiv.prepend(mealName);
             })
-
 		}
-		})
-		
+		})		
     }) 
  
    
