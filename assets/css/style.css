@@ -111,6 +111,24 @@ body {
     background-color:hsl(171, 100%, 41%);    
     color: whitesmoke;
         
+}
+
+#foodDiv h2 {
+    font-size: larger;
+    font-weight: bold;
+}
+
+#drinkDiv h2 {
+    font-size: larger;
+    font-weight: bold;
+}
+#foodDiv p {
+    font-weight: bold;
+}
+
+#drinkDiv p {
+    font-weight: bold;
+}
 
 /*.navbar-dropdown{
     background-color:hsl(171, 100%, 41%);    
@@ -134,19 +152,4 @@ body {
    .center{
        text-align: center;
    }
-#foodDiv h2 {
-    font-size: larger;
-    font-weight: bold;
-}
 
-#drinkDiv h2 {
-    font-size: larger;
-    font-weight: bold;
-}
-#foodDiv p {
-    font-weight: bold;
-}
-
-#drinkDiv p {
-    font-weight: bold;
-}
