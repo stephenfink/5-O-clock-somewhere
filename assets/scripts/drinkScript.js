@@ -257,7 +257,7 @@ ginBtn.addEventListener("click", function() {
 //-----Random Cocktail------
 var randomBtn = document.getElementById("btn6");
 randomBtn.addEventListener("click", function() {
-	var  randomCocktail = "https://www.thecocktaildb.com/api/json/v2/9973533/random.php"
+var  randomCocktail = "https://www.thecocktaildb.com/api/json/v2/9973533/random.php"
 $.ajax({
 	url: randomCocktail,
 	method: "GET"
