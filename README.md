@@ -36,6 +36,6 @@ Lastly, but not least, we wanted to add more Vegan choices and reviews.
 
 ## Images of current App
 
-<img src="https://cdn.discordapp.com/attachments/734993613188235288/753108425642213386/image.png" alt="top5img">
+<img src="https://cdn.discordapp.com/attachments/734993613188235288/753333549062553710/image.png" alt="top5img">
 
 <img src="https://cdn.discordapp.com/attachments/734993613188235288/753108244657995816/image.png" alt="foodimg">
