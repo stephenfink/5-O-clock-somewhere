@@ -1,3 +1,6 @@
+
+
+
 // this is my JS for the sake of getting console log.
 //catergories list
 url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?c=list";
@@ -54,6 +57,7 @@ var ginSearch2 ="https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=
 var ginSearch3 ="https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 17208"; // Rose
 var ginSearch4 ="https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 11054"; // arthur tompkins
 var ginSearch5 ="https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i= 17186"; // clover club
+=======
 
 // random url
 var randomCocktail =
@@ -158,6 +162,7 @@ $.ajax({
 //old fashion
 var wbtn1 = document.getElementById("wbtn1");
 wbtn1.addEventListener("click", function () {
+
   $.ajax({
     url: whiskeySearch1,
     method: "GET",
@@ -199,6 +204,7 @@ wbtn1.addEventListener("click", function () {
 var wbtn2 = document.getElementById("wbtn2")
 wbtn2.addEventListener("click", function () {
 
+
   $.ajax({
     url: whiskeySearch2,
     method: "GET",
@@ -236,10 +242,12 @@ wbtn2.addEventListener("click", function () {
   });
 });
 
+
 // red snapper
 
 var wbtn3 = document.getElementById("wbtn3");
 wbtn3.addEventListener("click", function () {
+
 
   $.ajax({
     url: whiskeySearch3,
@@ -278,10 +286,12 @@ wbtn3.addEventListener("click", function () {
   });
 });
 
+
 // Avalanche
 
 var wbtn4 = document.getElementById("wbtn4");
 wbtn4.addEventListener("click", function () {
+
   $.ajax({
     url: whiskeySearch4,
     method: "GET",
@@ -319,10 +329,12 @@ wbtn4.addEventListener("click", function () {
   });
 });
 
+
 //Allegheny
 
 var wbtn5 = document.getElementById("wbtn5");
 wbtn5.addEventListener("click", function () {
+
   $.ajax({
     url: whiskeySearch5,
     method: "GET",
@@ -364,14 +376,18 @@ wbtn5.addEventListener("click", function () {
 
 // Bahama Mama
 
+
 var rbtn1 = document.getElementById("rbtn1");
 rbtn1.addEventListener("click", function () {
+
   $.ajax({
     url: rumSearch1,
     method: "GET",
   }).then(function (Rum) {
     console.log(Rum);
+
     let RumDiv = document.getElementById("drinkDiv2");
+
     let drinkName = document.createElement("h2");
     drinkName.innerHTML = Rum.drinks[0].strDrink;
     RumDiv.appendChild(drinkName);
@@ -404,14 +420,18 @@ rbtn1.addEventListener("click", function () {
 });
 
 // Banana Cream Pi
+
 var rbtn2 = document.getElementById("rbtn2");
 rbtn2.addEventListener("click", function () {
+
   $.ajax({
     url: rumSearch2,
     method: "GET",
   }).then(function (Rum) {
     console.log(Rum);
+
     let RumDiv = document.getElementById("drinkDiv2");
+
     let drinkName = document.createElement("h2");
     drinkName.innerHTML = Rum.drinks[0].strDrink;
     RumDiv.appendChild(drinkName);
@@ -445,14 +465,18 @@ rbtn2.addEventListener("click", function () {
 
 // Grim Reaper
 
+
 var rbtn3 = document.getElementById("rbtn3");
 rbtn3.addEventListener("click", function () {
+
   $.ajax({
     url: rumSearch3,
     method: "GET",
   }).then(function (Rum) {
     console.log(Rum);
+
     let RumDiv = document.getElementById("drinkDiv2");
+
     let drinkName = document.createElement("h2");
     drinkName.innerHTML = Rum.drinks[0].strDrink;
     RumDiv.appendChild(drinkName);
@@ -486,14 +510,18 @@ rbtn3.addEventListener("click", function () {
 
 // PLanter's Punch
 
+
 var rbtn4 = document.getElementById("rbtn4");
 rbtn4.addEventListener("click", function () {
+
   $.ajax({
     url: rumSearch4,
     method: "GET",
   }).then(function (Rum) {
     console.log(Rum);
+
     let RumDiv = document.getElementById("drinkDiv2");
+
     let drinkName = document.createElement("h2");
     drinkName.innerHTML = Rum.drinks[0].strDrink;
     RumDiv.appendChild(drinkName);
@@ -527,14 +555,18 @@ rbtn4.addEventListener("click", function () {
 
 // Cuba Libre
 
+
 var rbtn4 = document.getElementById("rbtn5");
 rbtn4.addEventListener("click", function () {
+
   $.ajax({
     url: rumSearch5,
     method: "GET",
   }).then(function (Rum) {
     console.log(Rum);
+
     let RumDiv = document.getElementById("drinkDiv2");
+
     let drinkName = document.createElement("h2");
     drinkName.innerHTML = Rum.drinks[0].strDrink;
     RumDiv.appendChild(drinkName);
@@ -569,15 +601,19 @@ rbtn4.addEventListener("click", function () {
 
 // tequila button
 
+
 // Radioactive Longisland Ice Tea
 var tbtn1 = document.getElementById("tbtn1");
 tbtn1.addEventListener("click", function () {
+
   $.ajax({
     url: tequilaSearch1,
     method: "GET",
   }).then(function (Tequila) {
     console.log(Tequila);
+
     let TequilaDiv = document.getElementById("drinkDiv3");
+
     let drinkName = document.createElement("h2");
     drinkName.innerHTML = Tequila.drinks[0].strDrink;
     TequilaDiv.appendChild(drinkName);
@@ -625,16 +661,20 @@ tbtn2.addEventListener("click", function () {
     img.src = Tequila.drinks[0].strDrinkThumb;
     TequilaDiv.appendChild(img);
 
+
     for (let i = 1; i < 16; i++) {
       console.log();
       if (
+
         Tequila.drinks[0][`strIngredient${i}`] == null ||
         Tequila.drinks[0][`strIngredient${i}`] == ""
+
       ) {
         break;
       }
       let ingredient = document.createElement("li");
       ingredient.innerHTML =
+
         Tequila.drinks[0][`strMeasure${i}`] +
         ": " +
         Tequila.drinks[0][`strIngredient${i}`];
@@ -665,6 +705,7 @@ tbtn3.addEventListener("click", function () {
     img.src = Tequila.drinks[0].strDrinkThumb;
     TequilaDiv.appendChild(img);
 
+
     for (let i = 1; i < 16; i++) {
       console.log();
       if (
@@ -675,6 +716,7 @@ tbtn3.addEventListener("click", function () {
       }
       let ingredient = document.createElement("li");
       ingredient.innerHTML =
+
         Tequila.drinks[0][`strMeasure${i}`] +
         ": " +
         Tequila.drinks[0][`strIngredient${i}`];
@@ -1149,16 +1191,20 @@ gbtn5.addEventListener("click", function () {
     img.src = gin.drinks[0].strDrinkThumb;
     ginDiv.appendChild(img);
 
+
     for (let i = 1; i < 16; i++) {
       console.log();
       if (
+
         gin.drinks[0][`strIngredient${i}`] == null ||
         gin.drinks[0][`strIngredient${i}`] == ""
+
       ) {
         break;
       }
       let ingredient = document.createElement("li");
       ingredient.innerHTML =
+
         gin.drinks[0][`strMeasure${i}`] +
         ": " +
         gin.drinks[0][`strIngredient${i}`];
@@ -1257,3 +1303,4 @@ document.querySelector('form.ingredientSearch').addEventListener('submit', funct
 		}
 		})
 });
+
