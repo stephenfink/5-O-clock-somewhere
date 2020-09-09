@@ -343,5 +343,3 @@ document.querySelector('form.ingredientSearch').addEventListener('submit', funct
 		}
 		})
 });
-
-

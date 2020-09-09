@@ -80,6 +80,14 @@ body{
     text-align: center;
 }
 
+
+body {
+
+    background-color: #121d82;
+
+    background-color: lightsalmon;
+
+}
 #vodkaDiv {
     font-size: auto;
     text-align: center;
@@ -103,9 +111,8 @@ body{
     background-color:hsl(171, 100%, 41%);    
     color: whitesmoke;
         
-}
 
-.navbar-dropdown{
+/*.navbar-dropdown{
     background-color:hsl(171, 100%, 41%);    
     color: whitesmoke;
         
