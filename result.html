@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5 O' Clock Somewhere</title>
-    
-    
+    <!--Project CSS Link-->
     <link href="assets/css/style.css" rel="stylesheet" type = "text/css">
+    <!--Bulma CSS Link-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
   
 </head>
@@ -16,8 +16,6 @@
       <section class="hero is-primary">
           <h1 class="title">5 O' Clock Somewhere</h1>
           <h3 class="subtitle">"In cooking you've got to have a what-the-hell attitude." ~ Julia Child</h3>
-          <!--Search form here-->
-
      </section>
     </div>
 
@@ -37,6 +35,7 @@
         </div>
       </div>
     </div>
+<!--This section is where the search by ingredient input and the random dish button are, along with images-->
   <section class="hero">
        <div id="frontSideBar" >
               <div class="topsearchbar">  
@@ -54,7 +53,7 @@
               </div> 
               <br> 
               <button class="button is-primary " id="btn1">Random Dish!</button>
-
+<!--This section is for the food buttons that will generate recipes-->
         </div>
               <div id="frontBlock" class="buttons">
                   <button class="button is-primary" id="btn2">Breakfast</button>  
@@ -66,14 +65,15 @@
                   <button class="button is-primary " id="btn8">Soup</button>
                   <button class="button is-primary " id="btn9">Vegetarian</button>
               </div>
-   </section>            
+   </section> 
+<!--Where the food recipes render-->            
   <div id="foodDiv"></div>
 
-    <!--the color should changed to see if CSS file is linked need to double check on it-->
+    <!--AJAX Jquery Link-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!--<script src="assets/scripts/script.js" type="text/javascript"></script>-->
+    <!--Font Awesome Link-->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <!--Project JS file-->
+    <!--Project Food JS Link-->
     <script src="assets/scripts/foodScript.js" type="text/javascript"></script>
 
 
