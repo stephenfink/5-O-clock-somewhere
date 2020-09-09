@@ -1,6 +1,7 @@
 # 5-O-clock-somewhere
 this is for the project one of the bootcamp:
 The link to the app: https://stephenfink.github.io/5-O-clock-somewhere/
+This app is mobile first in mind since for future plans and ideas it would viewed the most.
 
 <img src="https://cdn.discordapp.com/attachments/734993613188235288/753060502506045590/unknown.png" alt="title">
 
@@ -22,7 +23,7 @@ https://bulma.io/documentation/
 
 ## Image of App
 This is a phone view of the app
-<img src="https://media.discordapp.net/attachments/734993613188235288/753003672950276196/unknown.png?width=821&height=445" alt="homepageImgOnPhone">
+<img src="https://media.discordapp.net/attachments/734993613188235288/753107503054716998/image.png?width=284&height=467" alt="homepageIMG">
 
 ## Future ideas
 
@@ -31,3 +32,9 @@ The first idea we want to add is a rating system for pairing foods with drinks t
 The other future idea was to add games to the app, so when a user logs in they and anyone else who has the app can play with others with a few clicks.
 
 Lastly, but not least, we wanted to add more Vegan choices and reviews. 
+
+## Images of current App
+
+<img src="https://cdn.discordapp.com/attachments/734993613188235288/753108425642213386/image.png" alt="top5img">
+
+<img src="https://cdn.discordapp.com/attachments/734993613188235288/753108244657995816/image.png" alt="foodimg">
