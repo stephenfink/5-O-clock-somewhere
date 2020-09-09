@@ -1,13 +1,13 @@
 # 5-O-clock-somewhere
 this is for the project one of the bootcamp:
 
-The link to the app: [https://stephenfink.github.io/5-O-clock-somewhere/]("https://stephenfink.github.io/5-O-clock-somewhere/")
+The link to the app: https://stephenfink.github.io/5-O-clock-somewhere/
 
 
 <img src="https://cdn.discordapp.com/attachments/734993613188235288/753060502506045590/unknown.png" alt="title">
 
-5 O' Clock Somewhere is our app to help those who are staying at home and want to make their favorite drinks from the bar. 
-It gives a image, ingredients, and measurements, and how to make items.
+5 O' Clock Somewhere is our app to help those who are staying at home and want to make their favorite drinks from the bar and cook delicious food. 
+It gives a image, ingredients, and measurements, and instructions on how to make the item.
 
 This can be use to make a drink just for you, or become the best host amoung your friends.
 
