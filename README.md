@@ -39,3 +39,9 @@ Lastly, but not least, we wanted to add more Vegan choices and reviews.
 <img src="https://cdn.discordapp.com/attachments/734993613188235288/753333549062553710/image.png" alt="top5img">
 
 <img src="https://cdn.discordapp.com/attachments/734993613188235288/753108244657995816/image.png" alt="foodimg">
+
+Contact our team:
+Stephen Fink : https://github.com/stephenfink
+Stephen Flores :  https://github.com/sflores813
+Ryan Hatfield : https://github.com/Ryan-Hatfield
+Ben Townsend: https://github.com/rbt00001
